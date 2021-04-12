@@ -74,8 +74,6 @@ Ferramenta | Função
 [Numpy](https://numpy.org/) | Biblioteca utilizada para manipulação de vetores multidimensionais.
 [Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
 
-
-
 ## Cronograma
 
 O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
