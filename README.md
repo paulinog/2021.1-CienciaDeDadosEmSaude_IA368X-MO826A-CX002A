@@ -28,30 +28,39 @@ No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep
 
 ## Perguntas de Pesquisa
 
-- Como algoritmos de Deep Learning podem ser usados para contribuir na detecção de lesões em imagens para diagnóstico.
+- Como algoritmos de Deep Learning podem ser usados para contribuir na detecção de lesões em imagens para exames diagnósticos de RM.
 - Avaliar a viabilidade de um algoritmo de deep learning treinado para segmentar o fígado e delinear automaticamente LHF em exames de RM. 
 - Comparar a rede de detecção e delineamento automático de LHF em exames de RM com o método “padrão de referência” consensual entre dois radiologistas experientes em radiologia abdominal. 
 
 ## Bases de Dados
 
-A base de dados adotada para realização desse trabalho contém imagens <2D e 3D?> de ressonância magnética multifásica com contraste, obtidas no <local de coleta|HC?>, entre o período de <INICIO> e <FIM>. Foram coletadas amostras de N pacientes, sendo X diagnosticados com carcinoma hepatocelular (HCC) e Y controles. <O critério para inclusão dos pacientes ao grupo de controle são adultos que não possuem HCC, entretanto podem apresentar outras patologias hepáticas|PODE?>.
+Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos (10).
 
-As amostras foram manualmente anotadas por especialistas clínicos, para denotar a região onde foram identificados traços que salientam a presenta da lesão.
+Os exames foram realizados em aparelho de RM 1,5 T (Tesla), com bobina específica; os pacientes realizaram jejum de 06 horas. Foram realizadas sequências sem contraste, ponderadas em T1 em fase e fora de fase e sequências coronais ponderadas em T2. Em seguida, prosseguiu-se estudo dinâmico após injeção do meio de contraste com sequências ponderadas em T1 com saturação de gordura antes e após injeção intravenosa do meio de contraste, com dose de 0,1 mL/kg de peso (equivalente a 0,025 mmol/kg) em bolus, por meio de injetora automática, velocidade de 3 mL/s, seguido de um flush de 20 ml de solução salina na mesma velocidade de infusão.  Após a injeção do ácido gadoxético, obtiveram-se imagens axiais, sequência gradiente eco ponderada em T1 com saturação de gordura, nas fases dinâmicas: fase arterial (15 a 20 segundos após o início da injeção intravenosa), portal (após 60 segundos) e de transição (após 120 segundos); e na fase hepatobiliar (10 e 20 minutos após o início da injeção intravenosa).  Entre a fase de transição e a fase hepatobiliar foram adquiridas imagens ponderadas em T2 com e sem saturação de gordura e sequências ponderadas em difusão.  Os parâmetros técnicos utilizados em cada sequência são mostrados na tabela 1. 
 
-<EXPLICAR: Como é feito o processo de aquisição das HCC?>
+> As amostras foram manualmente anotadas por especialistas clínicos, para denotar a região onde foram identificados traços que salientam a presenta da lesão.
 
+Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ressonância magnética.
+
+<TABELA 1>
+
+A amostra final de acordo com os critérios utilizados para o diagnóstico definitivo foi de 302 lesões em 136 pacientes que realizaram exames de RM utilizando o ácido gadoxético como contraste na avaliação de LHF, sendo 160 lesões benignas (53,0 %) e 142 malignas (47,0%).  A maioria das 160 lesões benignas era hiperplasia nodular focal (n=90; 56,2%) seguida de cistos (n= 36; 22,5%), hemangiomas (n=22; 13,7 %) e adenomas (n=12; 7,5%).  Das 142 lesões malignas a maioria correspondia à metástase (n=87; 61,3 %), seguida pelos CHCs (n=55; 38,7%).
+
+A quantidade de lesões de acordo com os critérios para o diagnóstico definitivo em cada paciente variou entre 1 e 5 lesões (média 2,4; DP 1,8).  O diâmetro das 160 lesões benignas variou entre 0,4 cm e 8,8 cm (média 2,7 cm; DP 1,9 cm). O diâmetro das 142 lesões malignas variou entre 0,4 cm e 7,8 cm (média 2,1 cm; DP 1,7 cm). Comparativamente, as médias dos diâmetros das lesões benignas foram maiores que as malignas (valor-p=0.0051- EEG- tabela 2).  
+
+<TABELA 2>
 
 ## Metodologia
 
-Nosso principal objetivo é desenvolver uma solução capaz de classificar a presença de carcinoma no fígado, a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[1]](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
+Proposta de metodologia incluindo especificação de quais técnicas pretende-se explorar, tais como: aprendizagem de máquina, análise de redes, análise estatística, ou integração de uma ou mais técnicas. Para a primeira entrega, descreva de maneira mais genérica que tipo de abordagem seu grupo pretende realizar.
+
+Nosso principal objetivo é desenvolver uma solução capaz de classificar a presença de carcinoma no fígado, a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[11]](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
 
 Essa arquitetura é composta por dois componentes principais, um codificador e um decodificador. A função do codificador é extrair características de complexidade crescente e criar uma representação de baixo nível da imagem. O decodificador, por sua vez, é responsável por reconstruir o mapa de características da representação correspondente. Os autores mostraram que tal método reduz resultados competitivos para segmentação e classificação de regiões comprometidas do fígado.
 
 Além disso, fizemos uma breve revisão na literatura e identificamos trabalhos que nos ajudarão durante o desenvolvimento do presente trabalho.
 
-Hamm et al. [[2]](#referências) desenvolveram um método para classificação de lesões baseando-se em redes convolucionais. Para isso, os autores propuseram uma topologia de rede que empilha níveis que combinam operações em camadas totalmente conectadas, convolução e pooling.
-
-    
+Hamm et al. [[12]](#referências) desenvolveram um método para classificação de lesões baseando-se em redes convolucionais. Para isso, os autores propuseram uma topologia de rede que empilha níveis que combinam operações em camadas totalmente conectadas, convolução e pooling.
 
 Nesse projeto adotaremos a metodologia CRISP-DM. 
 
@@ -119,9 +128,9 @@ O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
 
 10. Brasil. Ministério da Saúde. Conselho Nacional de Saúde. Resolução nº 510/2016 sobre diretrizes e normas regulamentadoras de pesquisas envolvendo seres humanos. Disponível em:< http://conselho.saude.gov.br/resolucoes/2016/reso510.pdf >. Acesso em: 17 out. 2018.
 
-[1] Bousabarah, K., Letzen, B., Tefera, J., Savic, L., Schobert, I., Schlachter, T., Staib, L.H., Kocher, M., Chapiro, J. and Lin, M., 2020. Automated detection and delineation of hepatocellular carcinoma on multiphasic contrast-enhanced MRI using deep learning. Abdominal Radiology, pp.1-10.
+11. Bousabarah, K., Letzen, B., Tefera, J., Savic, L., Schobert, I., Schlachter, T., Staib, L.H., Kocher, M., Chapiro, J. and Lin, M., 2020. Automated detection and delineation of hepatocellular carcinoma on multiphasic contrast-enhanced MRI using deep learning. Abdominal Radiology, pp.1-10.
 
-[2] Hamm, C.A., Wang, C.J., Savic, L.J., Ferrante, M., Schobert, I., Schlachter, T., Lin, M., Duncan, J.S., Weinreb, J.C., Chapiro, J. and Letzen, B., 2019. Deep learning for liver tumor diagnosis part I: development of a convolutional neural network classifier for multi-phasic MRI. European radiology, 29(7), pp.3338-3347.
+12. Hamm, C.A., Wang, C.J., Savic, L.J., Ferrante, M., Schobert, I., Schlachter, T., Lin, M., Duncan, J.S., Weinreb, J.C., Chapiro, J. and Letzen, B., 2019. Deep learning for liver tumor diagnosis part I: development of a convolutional neural network classifier for multi-phasic MRI. European radiology, 29(7), pp.3338-3347.
 
 # Estrutura do Repositório
 
