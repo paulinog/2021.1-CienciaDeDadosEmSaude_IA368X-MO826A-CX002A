@@ -36,6 +36,16 @@ As amostras foram manualmente anotadas por especialistas clínicos, para denotar
 
 ## Metodologia
 
+Nosso principal objetivo é desenvolver uma solução capaz de classificar a presença de carcinoma no fígado, a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[1]](#referencias), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
+
+Essa arquitetura é composta por dois componentes principais, um codificador e um decodificador. A função do codificador é extrair características de complexidade crescente e criar uma representação de baixo nível da imagem. O decodificador, por sua vez, é responsável por reconstruir o mapa de características da representação correspondente. Os autores mostraram que tal método reduz resultados competitivos para segmentação e classificação de regiões comprometidas do fígado.
+
+Além disso, fizemos uma breve revisão na literatura e identificamos trabalhos que nos ajudarão durante o desenvolvimento do presente trabalho.
+
+Hamm et al. desenvolveram um método para classificação de lesões baseando-se em redes convolucionais. Para isso, os autores propuseram uma topologia de rede que empilha níveis que combinam operações em camadas totalmente conectadas, convolução e pooling.
+
+    
+
 Nesse projeto adotaremos a metodologia CRISP-DM. 
 
 ## Ferramentas
@@ -44,7 +54,7 @@ Ferramenta | Função
 ----- | -----
 [Python 3](https://www.python.org/) | Linguagem de programação a ser utilizada para o desenvolvimento das soluções propostas.
 [Pytorch](https://pytorch.org) | Arcabouço de código aberto para desenvolvimento de modelos de aprendizagem de máquina e aprendizagem profunda.
-[Pandas](https://pandas.pydata.org/) | Ferramenta para manipulação de análise de dados.
+[Pandas](https://pandas.pydata.org/) | Ferramenta para manipulação e análise de dados.
 [Numpy](https://numpy.org/) | Biblioteca utilizada para manipulação de vetores multidimensionais.
 [Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
 
@@ -79,6 +89,12 @@ O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
 | Desenvolver Relatório     |           |    [x]    |    [x]    |    [x]    |    [x]    |    [x]    |
 +---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
 ```
+
+# Referências
+
+[1] Bousabarah, K., Letzen, B., Tefera, J., Savic, L., Schobert, I., Schlachter, T., Staib, L.H., Kocher, M., Chapiro, J. and Lin, M., 2020. Automated detection and delineation of hepatocellular carcinoma on multiphasic contrast-enhanced MRI using deep learning. Abdominal Radiology, pp.1-10.
+
+[2] Hamm, C.A., Wang, C.J., Savic, L.J., Ferrante, M., Schobert, I., Schlachter, T., Lin, M., Duncan, J.S., Weinreb, J.C., Chapiro, J. and Letzen, B., 2019. Deep learning for liver tumor diagnosis part I: development of a convolutional neural network classifier for multi-phasic MRI. European radiology, 29(7), pp.3338-3347.
 
 # Estrutura do Repositório
 
