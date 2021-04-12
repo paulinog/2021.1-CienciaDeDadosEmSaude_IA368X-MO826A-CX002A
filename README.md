@@ -60,6 +60,10 @@ Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ress
 \** TFE- Turbo field echo. 
 \*** EPI- Echo Planar Imaging. 
 
+Dois médicos radiologistas (radiologista A com 5 anos, B com mais de 10 anos de experiência em radiologia abdominal) independentemente avaliaram os exames de imagens  de modo cego quanto a dados clínico e laboratoriais. Os casos discordantes foram discutidos, chegando-se a consenso. 
+
+O critério diagnóstico definitivo das lesões malignas (metástases hepáticas e CHCs) e dos adenomas foi baseado na confirmação anatomopatológica. Os critérios utilizados para o diagnóstico definitivo das demais lesões benignas (HNFs, cistos e hemangiomas) foram a avaliação histopatológica e/ou a ausência de alterações no acompanhamento por imagem (TC ou RM) por dois anos sem tratamento. 
+
 A amostra final de acordo com os critérios utilizados para o diagnóstico definitivo foi de 302 lesões em 136 pacientes que realizaram exames de RM utilizando o ácido gadoxético como contraste na avaliação de LHF, sendo 160 lesões benignas (53,0 %) e 142 malignas (47,0%).  A maioria das 160 lesões benignas era hiperplasia nodular focal (n=90; 56,2%) seguida de cistos (n= 36; 22,5%), hemangiomas (n=22; 13,7 %) e adenomas (n=12; 7,5%).  Das 142 lesões malignas a maioria correspondia à metástase (n=87; 61,3 %), seguida pelos CHCs (n=55; 38,7%).
 
 A quantidade de lesões de acordo com os critérios para o diagnóstico definitivo em cada paciente variou entre 1 e 5 lesões (média 2,4; DP 1,8).  O diâmetro das 160 lesões benignas variou entre 0,4 cm e 8,8 cm (média 2,7 cm; DP 1,9 cm). O diâmetro das 142 lesões malignas variou entre 0,4 cm e 7,8 cm (média 2,1 cm; DP 1,7 cm). Comparativamente, as médias dos diâmetros das lesões benignas foram maiores que as malignas (valor-p=0.0051- EEG- tabela 2).  
@@ -68,9 +72,7 @@ Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão
 
 ## Metodologia
 
-Proposta de metodologia incluindo especificação de quais técnicas pretende-se explorar, tais como: aprendizagem de máquina, análise de redes, análise estatística, ou integração de uma ou mais técnicas. Para a primeira entrega, descreva de maneira mais genérica que tipo de abordagem seu grupo pretende realizar.
-
-Nosso principal objetivo é desenvolver uma solução capaz de classificar a presença de carcinoma no fígado, a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[11]](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
+Nosso principal objetivo é desenvolver uma solução capaz de detectar LHF a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[11]](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
 
 Essa arquitetura é composta por dois componentes principais, um codificador e um decodificador. A função do codificador é extrair características de complexidade crescente e criar uma representação de baixo nível da imagem. O decodificador, por sua vez, é responsável por reconstruir o mapa de características da representação correspondente. Os autores mostraram que tal método reduz resultados competitivos para segmentação e classificação de regiões comprometidas do fígado.
 
