@@ -64,7 +64,7 @@ A amostra final de acordo com os critérios utilizados para o diagnóstico defin
 
 A quantidade de lesões de acordo com os critérios para o diagnóstico definitivo em cada paciente variou entre 1 e 5 lesões (média 2,4; DP 1,8).  O diâmetro das 160 lesões benignas variou entre 0,4 cm e 8,8 cm (média 2,7 cm; DP 1,9 cm). O diâmetro das 142 lesões malignas variou entre 0,4 cm e 7,8 cm (média 2,1 cm; DP 1,7 cm). Comparativamente, as médias dos diâmetros das lesões benignas foram maiores que as malignas (valor-p=0.0051- EEG- tabela 2).  
 
-<TABELA 2>
+Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão.
 
 ## Metodologia
 
