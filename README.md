@@ -53,6 +53,8 @@ Ferramenta | Função
 ## Cronograma
 
 O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
+
+```text
 +---------------------------+-----------------------------------------------+-----------+-----------+
 |                           |                     Meses                     |           |           |
 |                           +-----------------------+-----------------------+-----------+-----------+
@@ -76,6 +78,7 @@ O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
 +---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
 | Desenvolver Relatório     |           |    [x]    |    [x]    |    [x]    |    [x]    |    [x]    |
 +---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+```
 
 # Estrutura do Repositório
 
