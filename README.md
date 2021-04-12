@@ -26,18 +26,56 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 > Perguntas de pesquisa que o projeto pretende responder ou hipóteses a serem avaliadas, enunciadas de maneira objetiva e verificável.
 
 ## Bases de Dados
-> Elencar bases de dados candidatas a serem utilizadas no projeto.
+
+A base de dados adotada para realização desse trabalho contém imagens <2D e 3D?> de ressonância magnética multifásica com contraste, obtidas no <local de coleta|HC?>, entre o período de <INICIO> e <FIM>. Foram coletadas amostras de N pacientes, sendo X diagnosticados com carcinoma hepatocelular (HCC) e Y controles. <O critério para inclusão dos pacientes ao grupo de controle são adultos que não possuem HCC, entretanto podem apresentar outras patologias hepáticas|PODE?>.
+
+As amostras foram manualmente anotadas por especialistas clínicos, para denotar a região onde foram identificados traços que salientam a presenta da lesão.
+
+<EXPLICAR: Como é feito o processo de aquisição das HCC?>
+
 
 ## Metodologia
-> Proposta de metodologia incluindo especificação de quais técnicas pretende-se explorar, tais como: aprendizagem de máquina, análise de redes, análise estatística, ou integração de uma ou mais técnicas. Para a primeira entrega, descreva de maneira mais genérica que tipo de abordagem seu grupo pretende realizar.
+
+Nesse projeto adotaremos a metodologia CRISP-DM. 
 
 ## Ferramentas
-> Ferramentas a serem utilizadas (com base na visão atual do grupo sobre o projeto).
+
+Ferramenta | Função
+----- | -----
+[Python 3](https://www.python.org/) | Linguagem de programação a ser utilizada para o desenvolvimento das soluções propostas.
+[Pytorch](https://pytorch.org) | Arcabouço de código aberto para desenvolvimento de modelos de aprendizagem de máquina e aprendizagem profunda.
+[Pandas](https://pandas.pydata.org/) | Ferramenta para manipulação de análise de dados.
+[Numpy](https://numpy.org/) | Biblioteca utilizada para manipulação de vetores multidimensionais.
+[Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
+
+
 
 ## Cronograma
-> Proposta de cronograma. Procure estimar quantas semanas serão gastas para cada etapa do projeto.
 
----
+O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
++---------------------------+-----------------------------------------------+-----------+-----------+
+|                           |                     Meses                     |           |           |
+|                           +-----------------------+-----------------------+-----------+-----------+
+|          Tarefas          |         Abril         |          Maio         |         Junho         |
+|                           +-----------+-----------+-----------+-----------+-----------+-----------+
+|                           | 1° quinz. | 2° quinz. | 1° quinz. | 2° quinz. | 1° quinz. | 2° quinz. |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Definir escopo do projeto |    [x]    |           |           |           |           |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Plano inicial de pesquisa |    [x]    |    [x]    |           |           |           |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Compreensão dos dados     |           |    [x]    |    [x]    |           |           |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Processamento dos dados   |           |           |    [x]    |    [x]    |           |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Modelar a solução         |           |           |           |    [x]    |    [x]    |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Avaliar                   |           |           |           |           |    [x]    |           |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Definir próximos passos   |           |           |           |           |    [x]    |    [x]    |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Desenvolver Relatório     |           |    [x]    |    [x]    |    [x]    |    [x]    |    [x]    |
++---------------------------+-----------+-----------+-----------+-----------+-----------+-----------+
 
 # Estrutura do Repositório
 
