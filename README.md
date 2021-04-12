@@ -12,7 +12,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 |Nome  | RA | Especialização|
 |--|--|--|
-| Daniel Alvarenga Fernandes | 190943  | Saúde / FCM |
+| [Daniel Alvarenga Fernandes](https://github.com/danielalvarengafernandes) | 190943  | Saúde / FCM |
 | [Giovane William de Souza Gomes](https://github.com/giovanewsgomes)  | 093801  | Computação / FEEC |
 | [Guilherme Paulino](https://github.com/paulinog) | 117119  | Computação / FEEC |
 | [Stephane de Freitas Schwarz](https://github.com/stephanefschwarz) | 211518  | Computação / IC |
@@ -42,7 +42,23 @@ Os exames foram realizados em aparelho de RM 1,5 T (Tesla), com bobina específi
 
 Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ressonância magnética.
 
-<TABELA 1>
+| Parâmetro | T2 | T2 com saturação de gordura | T1 “em fase” e “fora de fase” | Difusão | Imagens ponderadas em T1 sem contraste e após contraste |
+|--|--|--|--|--|--|
+| Sequência | Fast spin-echo | Fast spin-echo | Gradient-echo FFE\* | EPI\*** | Gradient-echo 3D/TFE\** | 
+| Respiração livre | Sim | Sim | Não | Não | Não | 
+| Matriz | 268 x 184 | 300 x 261 | 236 x 161 | 152 x150 | 168 x 228 | 
+| Espessura (mm) | 6,5 | 7 | 7 | 7 | 2.5 | 
+| Espaçamento (Gap) | 1,5 | 1 | 1 | 1 | -- | 
+| Ângulo de  giro | 90 | 90 | 80 | 90 | 10 | 
+|Campo de visão (AP, LL, CC) | 297x 335 x 222 | 363x 400 x 223 | 353 x 400 x 223 | 380 x 380 x 239 | 295 x 400 x 225 | 
+| Tempo de repetição (ms) | 5299 | 1299 | 104 | 2160 | 4.1 | 
+| Tempo de eco (ms) | 160 | 80 | 4.6/2.3 | 80 | 2.0 | 
+| Tempo de aquisição | 02:48 | 02:24 | 00:21 | 02:57 | 00:15 | 
+| Número de excitações | 2 | 2 | 1 | 4 | 1 | 
+
+\* FFE- Fast field echo. 
+\** TFE- Turbo field echo. 
+\*** EPI- Echo Planar Imaging. 
 
 A amostra final de acordo com os critérios utilizados para o diagnóstico definitivo foi de 302 lesões em 136 pacientes que realizaram exames de RM utilizando o ácido gadoxético como contraste na avaliação de LHF, sendo 160 lesões benignas (53,0 %) e 142 malignas (47,0%).  A maioria das 160 lesões benignas era hiperplasia nodular focal (n=90; 56,2%) seguida de cistos (n= 36; 22,5%), hemangiomas (n=22; 13,7 %) e adenomas (n=12; 7,5%).  Das 142 lesões malignas a maioria correspondia à metástase (n=87; 61,3 %), seguida pelos CHCs (n=55; 38,7%).
 
