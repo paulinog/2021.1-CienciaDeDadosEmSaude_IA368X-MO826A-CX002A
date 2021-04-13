@@ -18,9 +18,9 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | [Stephane de Freitas Schwarz](https://github.com/stephanefschwarz) | 211518  | Computação / IC |
 
 ## Descrição Resumida do Projeto
-Diferentes características radiômicas têm sido estudadas e estão associadas à histologia tumoral (1), estágio da lesão (2), sobrevida do paciente (3), metabolismo (4), além de muitos outros desfechos clínicos adicionais (5). Recentemente, um grupo de especialistas do Cancer Research UK (CRUK) e da Organização Europeia para Pesquisa e Tratamento do Câncer (EORTC) produziu 14 recomendações principais para acelerar a translação clínica da radiômica (6). Dentre estas, duas das recomendações foram a padronização dos biomarcadores de imagem e a revisão contínua da sua precisão (6). 
+Diferentes características radiômicas têm sido estudadas e estão associadas à histologia tumoral [(1)](#referências), estágio da lesão [(2)](#referências), sobrevida do paciente [(3)](#referências), metabolismo [(4)](#referências), além de muitos outros desfechos clínicos adicionais [(5)](#referências). Recentemente, um grupo de especialistas do Cancer Research UK (CRUK) e da Organização Europeia para Pesquisa e Tratamento do Câncer (EORTC) produziu 14 recomendações principais para acelerar a translação clínica da radiômica [(6)](#referências). Dentre estas, duas das recomendações foram a padronização dos biomarcadores de imagem e a revisão contínua da sua precisão [(6)](#referências). 
 
-Na busca da padronização nos biomarcadores imaginológicos, a segmentação do tumor é a mais crítica e um componente contencioso da radiômica já que as análises de dados de recursos subsequentes dependem dos resultados da segmentação do tumor (7,8). Como método rotineiro de segmentação na clínica, o delineamento manual demanda mais tempo e pode estar propensa a maior variabilidade devido às fronteiras indistintas de muitos tumores. Abordagens semiautomáticas são mais rápidas e podem vir a reduzir a variabilidade interobservador, podendo contribuir, em análise subsequente, para melhoria da reprodutibilidade dos biomarcadores de imagem e da precisão dos dados de imagens médicas (8,9).  
+Na busca da padronização nos biomarcadores imaginológicos, a segmentação do tumor é a mais crítica e um componente contencioso da radiômica já que as análises de dados de recursos subsequentes dependem dos resultados da segmentação do tumor [(7,8)](#referências). Como método rotineiro de segmentação na clínica, o delineamento manual demanda mais tempo e pode estar propensa a maior variabilidade devido às fronteiras indistintas de muitos tumores. Abordagens semiautomáticas são mais rápidas e podem vir a reduzir a variabilidade interobservador, podendo contribuir, em análise subsequente, para melhoria da reprodutibilidade dos biomarcadores de imagem e da precisão dos dados de imagens médicas [(8,9)](#referências).  
 
 No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep learning para segmentação hepática, detecção e delineamento automático de diferentes lesões hepáticas focais (LHF) benignas e malignas em ressonância magnética (RM) com o contraste hepatoespecífico, buscando-se assim fornecer uma contribuição inicial na busca da padronização dos recursos radiômicos. Tal algoritmo pode também facilitar a dinâmica do fluxo da rotina médica radiológica na emissão de laudos incluindo a produtividade em exames de RM em Medicina Interna/ Abdome. 
 
@@ -34,13 +34,13 @@ No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep
 
 ## Bases de Dados
 
-Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos (10).
+Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos [(10)](#referências).
 
 Os exames foram realizados em aparelho de RM 1,5 T (Tesla), com bobina específica; os pacientes realizaram jejum de 06 horas. Foram realizadas sequências sem contraste, ponderadas em T1 em fase e fora de fase e sequências coronais ponderadas em T2. Em seguida, prosseguiu-se estudo dinâmico após injeção do meio de contraste com sequências ponderadas em T1 com saturação de gordura antes e após injeção intravenosa do meio de contraste, com dose de 0,1 mL/kg de peso (equivalente a 0,025 mmol/kg) em bolus, por meio de injetora automática, velocidade de 3 mL/s, seguido de um flush de 20 ml de solução salina na mesma velocidade de infusão.  Após a injeção do ácido gadoxético, obtiveram-se imagens axiais, sequência gradiente eco ponderada em T1 com saturação de gordura, nas fases dinâmicas: fase arterial (15 a 20 segundos após o início da injeção intravenosa), portal (após 60 segundos) e de transição (após 120 segundos); e na fase hepatobiliar (10 e 20 minutos após o início da injeção intravenosa).  Entre a fase de transição e a fase hepatobiliar foram adquiridas imagens ponderadas em T2 com e sem saturação de gordura e sequências ponderadas em difusão.  Os parâmetros técnicos utilizados em cada sequência são mostrados na tabela 1. 
 
 > As amostras foram manualmente anotadas por especialistas clínicos, para denotar a região onde foram identificados traços que salientam a presenta da lesão.
 
-Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ressonância magnética.
+### Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ressonância magnética.
 
 | Parâmetro | T2 | T2 com saturação de gordura | T1 “em fase” e “fora de fase” | Difusão | Imagens ponderadas em T1 sem contraste e após contraste |
 |--|--|--|--|--|--|
@@ -68,7 +68,7 @@ A amostra final de acordo com os critérios utilizados para o diagnóstico defin
 
 A quantidade de lesões de acordo com os critérios para o diagnóstico definitivo em cada paciente variou entre 1 e 5 lesões (média 2,4; DP 1,8).  O diâmetro das 160 lesões benignas variou entre 0,4 cm e 8,8 cm (média 2,7 cm; DP 1,9 cm). O diâmetro das 142 lesões malignas variou entre 0,4 cm e 7,8 cm (média 2,1 cm; DP 1,7 cm). Comparativamente, as médias dos diâmetros das lesões benignas foram maiores que as malignas (valor-p=0.0051- EEG- tabela 2).  
 
-Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão.
+### Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão.
 
 | Tamanho da lesão\* | N   |    Média    | DP   |  Mínimo |  Mediana |     Máximo |
 |---                | ---  | ---         | ---  | ---     | ---      | ---        |
