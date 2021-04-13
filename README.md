@@ -156,9 +156,9 @@ O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
 
 8. Velazquez ER, Parmar C, Jermoumi M, Mak RH, Van Baardwijk A, Fennessy FM, Lewis JH, De Ruysscher D, Kikinis R, Lambin P. Volumetric CT-based segmentation of NSCLC using 3D-Slicer. Sci Rep 2013;3:3529.
 
-9. Parmar C, Velazquez ER, Leijenaar R, Jermoumi M, Carvalho S, Mak RH, Mitra S, Shankar BU, Kikinis RHaibe-Kains B. Robust radiomics feature quantification using semiautomatic volumetric segmentation. PLoS one 2014;9:e102107. Brasil. Ministério da Saúde. Conselho Nacional de Saúde. Resolução nº 466/2012 sobre diretrizes e normas regulamentadoras de pesquisas envolvendo seres humanos. Disponível em:<http://conselho.saude.gov.br/resolucoes/2012/Reso466.pdf>. Acesso em: 14 jan. 2018.
+9. Parmar C, Velazquez ER, Leijenaar R, Jermoumi M, Carvalho S, Mak RH, Mitra S, Shankar BU, Kikinis RHaibe-Kains B. Robust radiomics feature quantification using semiautomatic volumetric segmentation. PLoS one 2014;9:e102107. Brasil. Ministério da Saúde. Conselho Nacional de Saúde. Resolução nº 466/2012 sobre diretrizes e normas regulamentadoras de pesquisas envolvendo seres humanos. Disponível em:\<[http://conselho.saude.gov.br/resolucoes/2012/Reso466.pdf](http://conselho.saude.gov.br/resolucoes/2012/Reso466.pdf)\>. Acesso em: 14 jan. 2018.
 
-10. Brasil. Ministério da Saúde. Conselho Nacional de Saúde. Resolução nº 510/2016 sobre diretrizes e normas regulamentadoras de pesquisas envolvendo seres humanos. Disponível em:< http://conselho.saude.gov.br/resolucoes/2016/reso510.pdf >. Acesso em: 17 out. 2018.
+10. Brasil. Ministério da Saúde. Conselho Nacional de Saúde. Resolução nº 510/2016 sobre diretrizes e normas regulamentadoras de pesquisas envolvendo seres humanos. Disponível em: \<[http://conselho.saude.gov.br/resolucoes/2016/reso510.pdf](http://conselho.saude.gov.br/resolucoes/2016/reso510.pdf)\>. Acesso em: 17 out. 2018.
 
 11. Bousabarah, K., Letzen, B., Tefera, J., Savic, L., Schobert, I., Schlachter, T., Staib, L.H., Kocher, M., Chapiro, J. and Lin, M., 2020. Automated detection and delineation of hepatocellular carcinoma on multiphasic contrast-enhanced MRI using deep learning. Abdominal Radiology, pp.1-10.
 
