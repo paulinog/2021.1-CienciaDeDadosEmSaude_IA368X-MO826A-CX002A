@@ -70,6 +70,22 @@ A quantidade de lesões de acordo com os critérios para o diagnóstico definiti
 
 Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão.
 
+| Tamanho da lesão\* | N   |    Média    | DP   |  Mínimo |  Mediana |     Máximo |
+|---                | ---  | ---         | ---  | ---     | ---      | ---        |
+| Benignas          | 160  |      2,7    | 1,9  |  0,4    |  2,5     |        8,8 |
+| Malignas          | 142  |      2,1    | 1,7  |  0,4    |  0,9     |        7,8 |  
+|---                | ---  | ---         | ---  | ---     | ---      | ---        |
+|                   | N    |    Média    | DP   |  Mínimo |  Mediana |     Máximo |
+| Cisto             | 36   |      0,7    | 0,2  |  0,4    |  0,7     |        1,5 |
+| Hemangioma        | 22   |      0,7    | 0,2  |  0,4    |  0,7     |        0,9 | 
+| HNF               | 90   |      3,7    | 1,4  |  1,4    |  3,5     |        8,8 | 
+| Adenoma           | 12   |      4,6    | 0,4  |  4,1    |  4,6     |        5,3 | 
+| Metástase         | 87   |      0,9    | 0,5  |  0,4    |  0,8     |        3,2 | 
+| CHC               | 55   |      4,0    | 1,3  |  2,1    |  3,8     |        7,8 |
+
+\* valor-p=0.0051 (EEG) lesões benignas maiores que as malignas. 
+
+
 ## Metodologia
 
 Nosso principal objetivo é desenvolver uma solução capaz de detectar LHF a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [[11]](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
