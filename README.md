@@ -125,8 +125,8 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
 
 
 <p float="left">
-  <img src="/assets/initial_exploration_imgs/pearson_corr.png" width="100" />
-  <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="100" /> 
+  <img src="/assets/initial_exploration_imgs/pearson_corr.png" width="500" />
+  <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="500" /> 
 </p>
 
 
