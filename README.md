@@ -18,6 +18,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | [Stephane de Freitas Schwarz](https://github.com/stephanefschwarz) | 211518  | Computação / IC |
 
 ## Descrição Resumida do Projeto
+
 Diferentes características radiômicas têm sido estudadas e estão associadas à histologia tumoral [(1)](#referências), estágio da lesão [(2)](#referências), sobrevida do paciente [(3)](#referências), metabolismo [(4)](#referências), além de muitos outros desfechos clínicos adicionais [(5)](#referências). Recentemente, um grupo de especialistas do Cancer Research UK (CRUK) e da Organização Europeia para Pesquisa e Tratamento do Câncer (EORTC) produziu 14 recomendações principais para acelerar a translação clínica da radiômica [(6)](#referências). Dentre estas, duas das recomendações foram a padronização dos biomarcadores de imagem e a revisão contínua da sua precisão [(6)](#referências). 
 
 Na busca da padronização nos biomarcadores imaginológicos, a segmentação do tumor é a mais crítica e um componente contencioso da radiômica já que as análises de dados de recursos subsequentes dependem dos resultados da segmentação do tumor [(7,8)](#referências). Como método rotineiro de segmentação na clínica, o delineamento manual demanda mais tempo e pode estar propensa a maior variabilidade devido às fronteiras indistintas de muitos tumores. Abordagens semiautomáticas são mais rápidas e podem vir a reduzir a variabilidade interobservador, podendo contribuir, em análise subsequente, para melhoria da reprodutibilidade dos biomarcadores de imagem e da precisão dos dados de imagens médicas [(8,9)](#referências).  
@@ -28,9 +29,9 @@ No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep
 
 ## Perguntas de Pesquisa
 
-- Como algoritmos de Deep Learning podem ser usados para contribuir na detecção de lesões em imagens para exames diagnósticos de RM.
-- Avaliar a viabilidade de um algoritmo de deep learning treinado para segmentar o fígado e delinear automaticamente LHF em exames de RM. 
-- Comparar a rede de detecção e delineamento automático de LHF em exames de RM com o método “padrão de referência” consensual entre dois radiologistas experientes em radiologia abdominal. 
+- É possível identificar a presença de lesões no fígado por meio de imagens de tomografia computadorizadas?
+
+- É possível identificar traços de invasão microvascular através de dados clínicos, laboratoriais e de imagem de tomografia computadorizada?
 
 ## Bases de Dados
 
@@ -97,6 +98,46 @@ Além disso, fizemos uma breve revisão na literatura e identificamos trabalhos 
 Hamm et al. [(12)](#referências) desenvolveram um método para classificação de lesões baseando-se em redes convolucionais. Para isso, os autores propuseram uma topologia de rede que empilha níveis que combinam operações em camadas totalmente conectadas, convolução e pooling.
 
 Nesse projeto adotaremos a metodologia CRISP-DM. 
+
+## Bases de Dados e Evolução
+
+Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínicas e laboratoriais de pacientes com lesões no fígado e relacionadas ao exame realizado nos sujeitos. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada extraídas dos pacientes em questão.
+
+A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com lesão que se estende por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
+
+### Bases Estudadas, mas Não Adotadas
+
+Base de Dados | Endereço na Web | Resumo descritivo
+----- | ----- | -----
+Dados clínicos de TC | Domínio privado | Essa base de dados é composta por dados clínicos e laboratoriais de pacientes com lesões hepatocelulares.
+
+O primeiro conjunto de dados explorados consiste em uma tabela com informações clínicas e laboratoriais de pacientes com lesão hepática. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa e grau histológico da hepatopatia. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](#https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/data/README.md)
+
+Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação até o momento.
+
+Além dessas colunas com dados faltantes, 40 outros valores não estavam presentes na base. 39 dados referentes a data de nascimento dos pacientes e 1 relacionado a localização da lesão. Considerando a importância dessas informações, não realizamos nenhuma estratégia para substituição dos dados faltantes. Porém, dado que não é possível determinar se há ou não a presença de carcinoma hepático levando em consideração a idade do indivíduo, apenas ignoramos a ausência desses valores. Entrementes, a localização da lesão é fundamental para a identificação de invasão microvascular, nessa linha, para a amostra onde a informação de localização da lesão não foi passada, descartamos o dado.
+
+Existem 4 features categorias que descrevem o grau histológico, o sexo, a presença de invasão microvascular e a causa da hepatopatia. Realizamos a transformação manualmente apenas para fins de aprendizagem. 
+
+Verificamos que a maioria dos casos de hepatopatia celular foram causados pelo Vírus da Hepatite C (VHC), a maioria homens. 
+
+Realizamos um estudo da correlação das features e chegamos a resultados equivalentes usando a técnica de pearson e a de spearmam. Analisando os dados de correlação, notamos que nenhuma característica está fortemente ou moderadamente associada a presença de invasão microvascular. Como ilustrado nas matrizes de correlação abaixo.
+
+
+<p float="left">
+  <img src="/assets/initial_exploration_imgs/pearson_corr.png" width="100" />
+  <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="100" /> 
+</p>
+
+
+
+### Bases Estudadas e Adotadas
+
+Base de Dados | Endereço na Web | Resumo descritivo
+----- | ----- | -----
+Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
+
+
 
 ## Ferramentas
 
