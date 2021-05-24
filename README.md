@@ -33,6 +33,8 @@ No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep
 
 - É possível identificar traços de invasão microvascular através de dados clínicos, laboratoriais e de imagem de tomografia computadorizada?
 
+- É possível predizer a invasão microvascular do CHC no pré-operatório associando-se dados clínicos e assinatura radiômica pela tomografia computadorizada trifásica? 
+
 ## Bases de Dados
 
 Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos [(10)](#referências).
