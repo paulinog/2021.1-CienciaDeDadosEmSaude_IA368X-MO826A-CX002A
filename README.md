@@ -131,15 +131,15 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
 
 
 <p float="left">
-  <img src="/assets/initial_exploration_imgs/2.png" width="100" />
-  <img src="/assets/initial_exploration_imgs/3.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/4.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/5.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/6.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/7.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/8.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/9.png" width="500" /> 
-  <img src="/assets/initial_exploration_imgs/10.png" width="500" /> 
+  <img src="/assets/initial_exploration_imgs/2.png" width="250" />
+  <img src="/assets/initial_exploration_imgs/3.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/4.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/5.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/6.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/7.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/8.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/9.png" width="250" /> 
+  <img src="/assets/initial_exploration_imgs/10.png" width="250" /> 
 </p>
 
 
