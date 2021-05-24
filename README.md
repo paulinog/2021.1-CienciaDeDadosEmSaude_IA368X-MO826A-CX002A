@@ -131,7 +131,7 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
 
 Abaixo mostramos alguns gráficos de histogramas de algumas features presentes na base de dados. 
 
-Através desses gráficos é possível notar que a maior parte das lesões são pequenas. Não é possível dizer se a presença de invação microvascular está ligada majoritariamente a lesões pequenas visto que existem poucas grandes lesões descritas na base.
+Através desses gráficos é possível notar que a maior parte das lesões são pequenas. Não é possível dizer se a presença de invasão microvascular está ligada majoritariamente a lesões pequenas visto que existem poucas grandes lesões descritas na base.
 
 A fração de contraste arterial (AEF),  também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
 
