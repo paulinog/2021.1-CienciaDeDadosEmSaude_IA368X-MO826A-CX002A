@@ -132,13 +132,15 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
   <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="500" /> 
 </p>
 
-Essa características já havia sido descrito em alguns trabalhos da literatura médico científica. Nossa investigação inicial alcançou resultados coerrentes com os descritos em trabalhos anteriores.
+Essa característica já havia sido descrita em alguns trabalhos da literatura médico científica. Nossa investigação inicial alcançou resultados condizentes com os descritos em trabalhos anteriores.
 
 Abaixo mostramos alguns gráficos de histogramas de algumas features presentes na base de dados. 
 
-Através desses gráficos é possível notar que a maior parte das lesões são pequenas. Não é possível dizer se a presença de invasão microvascular está ligada majoritariamente a lesões pequenas visto que existem poucas grandes lesões descritas na base.
+Através desses gráficos, é possível notar que a maior parte das lesões são pequenas. Não é possível, por outro lado, dizer se a presença de invasão microvascular está ligada majoritariamente a lesões pequenas, visto que existem poucas grandes lesões descritas nesse conjunto.
 
-A fração de contraste arterial (AEF),  também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
+A fração de contraste arterial (AEF), também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
+
+Nos gráficos abaixo mostramos a distribuição dos dados, rotulados com a informação de presença ou ausência de invasão microvascular. A base de dados é ligeiramente desbalanceada, mas iremos lidar com isso através de técnicas de normalização por batch ou ponderando as classes.
 
 <p float="left">
   <img src="/assets/initial_exploration_imgs/2.png" width="250" />
@@ -152,18 +154,20 @@ A fração de contraste arterial (AEF),  também não aparenta ter nenhuma corre
   <img src="/assets/initial_exploration_imgs/10.png" width="250" /> 
 </p>
 
-Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presenta da invasão microvascular. Essa característica sugere que não é possível, a partir desses dados, inferir a probabilidade de um paciente conter ou não invasão microvascular, reforçando a ideia original de que para inferir a presença ou a probabilidade de uma invasão microvascular, devemos considerar principalmente para o exame tomográfico realizado.
+Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presenta da invasão microvascular. Essa característica sugere que não é possível, a partir desses dados, inferir a probabilidade de um paciente conter ou não invasão microvascular, reforçando a ideia original de que para identificar a presença ou a probabilidade de uma invasão microvascular, devemos considerar principalmente durante a análise o exame tomográfico realizado.
 
 <p float="center">
   <img src="/assets/initial_exploration_imgs/all.png" />
 </p>
 
 
-Os dados mostraram que em geral, a invasão microvascular está localizada na região 8 do fígado, identificamos 35 casos. Seguido pela região 7, com 21 casos registrados e a região 6 com 19 ocorrências. Todas essas regiões estão no lobo direito, como do fígado, como é possível observar na figura abaixo. 
+Os dados mostraram que em geral, a invasão microvascular está localizada na região 8 do fígado, identificamos 35 casos. Seguido pela região 7, com 21 casos registrados e a região 6, com 19 ocorrências. Todas essas regiões estão no lobo direito do fígado. Na imagem abaixo mostramos uma imagem com as segmentações e nomenclaturas de cada segmento do fígado.
 
 <p float="center">
   <img src="/assets/initial_exploration_imgs/liver_segments.jpg" />
 </p>
+
+O relatório completo gerado para cada uma das features presentes nesse conjunto de dados pode ser encontrado na pasta [assets](#https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/assets/).
 
 ### Bases Estudadas e Adotadas
 
@@ -171,7 +175,7 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
 
-Além dos dados tabulares com informações diversas dos paciente e exames clínicos e laboratoriais realizados. Investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
+Além dos dados tabulares com informações diversas dos paciente e exames clínicos e laboratoriais realizados, investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
 
 Na tabela abaixo mostramos as características gerais da base. É possível notar que para alguns pacientes, existem apenas dois frames ligados ao exame TC. Sendo que na média, esse número é significativamente superior, aproximadamente 100 imagens por fase. 
 
@@ -186,6 +190,12 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 | 50%   |  88      | 113     | 161      |
 | 75%   | 124.5    | 152.5   | 224.5    |
 | max   | 348      | 489     | 349      |
+
+
+
+## Próximos passos
+
+Para as próximas semanas, iremos iniciar uma investigação mais profunda considerando as imagens. Nosso principal objetivo será explorar métodos para identificação de invasão microvascular através de imagens de tomografia computadorizada. 
 
 
 ## Ferramentas
