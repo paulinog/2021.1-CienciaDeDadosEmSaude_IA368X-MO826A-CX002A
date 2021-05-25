@@ -36,7 +36,7 @@ No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep
 
 - É possível predizer a invasão microvascular do CHC no pré-operatório associando-se dados clínicos e assinatura radiômica pela tomografia computadorizada trifásica? 
 
-## Bases de Dados
+## Bases de Dados - Descrição do processo de aquisição
 
 Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos [(10)](#referências).
 
@@ -116,21 +116,23 @@ Dados clínicos de TC | Domínio privado | Essa base de dados é composta por da
 
 O primeiro conjunto de dados explorados consiste em uma tabela com informações clínicas e laboratoriais de pacientes com lesão hepática. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa e grau histológico da hepatopatia. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](#https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/data/README.md)
 
-Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação até o momento.
+Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação.
 
 Além dessas colunas com dados faltantes, 40 outros valores não estavam presentes na base. 39 dados referentes a data de nascimento dos pacientes e 1 relacionado a localização da lesão. Considerando a importância dessas informações, não realizamos nenhuma estratégia para substituição dos dados faltantes. Porém, dado que não é possível determinar se há ou não a presença de carcinoma hepático levando em consideração a idade do indivíduo, apenas ignoramos a ausência desses valores. Entrementes, a localização da lesão é fundamental para a identificação de invasão microvascular, nessa linha, para a amostra onde a informação de localização da lesão não foi passada, descartamos o dado.
 
 Existem 4 features categorias que descrevem o grau histológico, o sexo, a presença de invasão microvascular e a causa da hepatopatia. Realizamos a transformação manualmente apenas para fins de aprendizagem. 
 
-Verificamos que a maioria dos casos de hepatopatia celular foram causados pelo Vírus da Hepatite C (VHC), a maioria homens. 
+Verificamos que a maioria dos casos de hepatopatia celular foram causados pelo Vírus da Hepatite C (VHC), sendo majoritariamente pessoas do sexo masculino. 
 
-Realizamos um estudo da correlação das features e chegamos a resultados equivalentes usando a técnica de pearson e a de spearmam. Analisando os dados de correlação, notamos que nenhuma característica está fortemente ou moderadamente associada a presença de invasão microvascular. Como ilustrado nas matrizes de correlação abaixo.
+Realizamos um estudo da correlação das features e chegamos a resultados equivalentes usando tanto a técnica de pearson e quanto a de spearmam. Analisando os dados de correlação, notamos que nenhuma característica está fortemente ou moderadamente associada a presença de invasão microvascular. Como ilustrado nas matrizes de correlação abaixo.
 
 
 <p float="left">
   <img src="/assets/initial_exploration_imgs/pearson_corr.png" width="500" />
   <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="500" /> 
 </p>
+
+Essa características já havia sido descrito em alguns trabalhos da literatura médico científica. Nossa investigação inicial alcançou resultados coerrentes com os descritos em trabalhos anteriores.
 
 Abaixo mostramos alguns gráficos de histogramas de algumas features presentes na base de dados. 
 
@@ -150,12 +152,18 @@ A fração de contraste arterial (AEF),  também não aparenta ter nenhuma corre
   <img src="/assets/initial_exploration_imgs/10.png" width="250" /> 
 </p>
 
-Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presenta da invasão microvascular.
+Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presenta da invasão microvascular. Essa característica sugere que não é possível, a partir desses dados, inferir a probabilidade de um paciente conter ou não invasão microvascular, reforçando a ideia original de que para inferir a presença ou a probabilidade de uma invasão microvascular, devemos considerar principalmente para o exame tomográfico realizado.
 
 <p float="center">
   <img src="/assets/initial_exploration_imgs/all.png" />
 </p>
 
+
+Os dados mostraram que em geral, a invasão microvascular está localizada na região 8 do fígado, identificamos 35 casos. Seguido pela região 7, com 21 casos registrados e a região 6 com 19 ocorrências. Todas essas regiões estão no lobo direito, como do fígado, como é possível observar na figura abaixo. 
+
+<p float="center">
+  <img src="/assets/initial_exploration_imgs/liver_segments.jpg" />
+</p>
 
 ### Bases Estudadas e Adotadas
 
@@ -163,6 +171,9 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
 
+Além dos dados tabulares com informações diversas dos paciente e exames clínicos e laboratoriais realizados. Investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
+
+Na tabela abaixo mostramos as características gerais da base. É possível notar que para alguns pacientes, existem apenas dois frames ligados ao exame TC. Sendo que na média, esse número é significativamente superior, aproximadamente 100 imagens por fase. 
 
 
 |       |       s1 |      s2 |       s3 |
