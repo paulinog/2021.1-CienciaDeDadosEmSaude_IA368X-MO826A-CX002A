@@ -77,27 +77,27 @@ Nesse projeto adotaremos a metodologia CRISP-DM.
 
 ## Bases de Dados e Evolução
 
-Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínicas e laboratoriais de pacientes com lesões no fígado e relacionadas ao exame realizado nos sujeitos. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada extraídas dos pacientes em questão.
+Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínicas e laboratoriais de pacientes com lesões no fígado (CHC) e relacionadas ao exame histopatológico de presença ou ausência de IMV pré-operatória do CHC. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada  dos pacientes em questão (prospecção de radiômica).
 
-A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com lesão que se estende por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
+A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com lesão que se estendem por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
 
 ### Bases Estudadas, mas Não Adotadas
 
 Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
-Dados clínicos de TC | Domínio privado | Essa base de dados é composta por dados clínicos e laboratoriais de pacientes com lesões hepatocelulares.
+Dados clínicos de TC | Domínio privado | Essa base de dados é composta por dados clínico-laboratoriais de pacientes com CHCs.
 
-O primeiro conjunto de dados explorados consiste em uma tabela com informações clínicas e laboratoriais de pacientes com lesão hepática. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa e grau histológico da hepatopatia. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/tree/main/data)
+O primeiro conjunto de dados explorados consiste em uma tabela com informações clínic0-laboratoriais de pacientes com CHCs confirmados histopatologicamente. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa da hepatopatia e  grau histológico do CHC. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/tree/main/data)
 
 Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação.
 
-Além dessas colunas com dados faltantes, 40 outros valores não estavam presentes na base. 39 dados referentes a data de nascimento dos pacientes e 1 relacionado a localização da lesão. Considerando a importância dessas informações, não realizamos nenhuma estratégia para substituição dos dados faltantes. Porém, dado que não é possível determinar se há ou não a presença de carcinoma hepático levando em consideração a idade do indivíduo, apenas ignoramos a ausência desses valores. Entrementes, a localização da lesão é fundamental para a identificação de invasão microvascular, nessa linha, para a amostra onde a informação de localização da lesão não foi passada, descartamos o dado.
+Além dessas colunas com dados faltantes, 39 outros valores não estavam presentes na base, referentes a data de nascimento dos pacientes (embora tenhamos a idade dos pacientes, como substituto). Considerando a pouca importância dessas informações já que possuímos a idade, não realizamos nenhuma estratégia para substituição dos dados faltantes. 
 
-Existem 4 features categorias que descrevem o grau histológico, o sexo, a presença de invasão microvascular e a causa da hepatopatia. Realizamos a transformação manualmente apenas para fins de aprendizagem. 
+Existem 4 features categóricas que descrevem o grau histológico, o sexo, a presença/ ausência de invasão microvascular e a causa da hepatopatia. Realizamos a transformação manualmente apenas para fins de aprendizagem. 
 
-Verificamos que a maioria dos casos de hepatopatia celular foram causados pelo Vírus da Hepatite C (VHC), sendo majoritariamente pessoas do sexo masculino. 
+Verificamos que a maioria dos casos de hepatopatia subjacente foram causados pelo Vírus da Hepatite C (VHC), sendo majoritariamente pessoas do sexo masculino. 
 
-Realizamos um estudo da correlação das features e chegamos a resultados equivalentes usando tanto a técnica de pearson e quanto a de spearmam. Analisando os dados de correlação, notamos que nenhuma característica está fortemente ou moderadamente associada a presença de invasão microvascular. Como ilustrado nas matrizes de correlação abaixo.
+Realizamos um estudo da correlação das features e chegamos a resultados equivalentes usando tanto a técnica de pearson quanto a de spearmam. Analisando os dados de correlação, notamos que o grau histopatológico está moderadamente associado a presença de invasão microvascular. Como ilustrado nas matrizes de correlação abaixo.
 
 
 <p float="left">
@@ -105,7 +105,7 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
   <img src="/assets/initial_exploration_imgs/spearman_corr.png" width="500" /> 
 </p>
 
-Essa característica já havia sido descrita em alguns trabalhos da literatura médico científica. Nossa investigação inicial alcançou resultados condizentes com os descritos em trabalhos anteriores.
+Essa característica já havia sido descrita em alguns trabalhos da literatura médico-científica. Nossa investigação inicial alcançou resultados condizentes com os descritos em trabalhos anteriores.
 
 Abaixo mostramos alguns gráficos de histogramas de algumas features presentes na base de dados. 
 
