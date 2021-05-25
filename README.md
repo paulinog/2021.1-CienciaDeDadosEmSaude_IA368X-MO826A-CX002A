@@ -57,7 +57,7 @@ Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de
 Parâmetros quantitativos de hipervascularização arterial e lavagem do contraste dos carcinomas foram calculados. “Regiões de Interesse” (ROIs) foram circuladas manualmente nas lesões e em duas regiões de parênquima do fígado adjacente aos CHCs, nas imagens pré-contraste e nas fases arterial, portal e equilíbrio após a injeção do meio de contraste. 
 
 <p float="left">
-  <img src="/assets/initial_exploration_imgs/different_phases_chc.png" width="500" />
+  <img src="/assets/initial_exploration_imgs/different_phases_chc.JPG" width="500" />
 </p>
 
 Figura 01: Carcinoma hepatocelular. Cortes axiais de TC pré-contraste (a) e nas fases arterial (b), portal (c) e de equilíbrio (d) com as ROIs posicionadas no nódulo e no parênquima adjacente.
