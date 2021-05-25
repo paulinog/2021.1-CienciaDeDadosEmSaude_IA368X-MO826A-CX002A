@@ -135,8 +135,6 @@ Através desses gráficos é possível notar que a maior parte das lesões são 
 
 A fração de contraste arterial (AEF),  também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
 
-
-
 <p float="left">
   <img src="/assets/initial_exploration_imgs/2.png" width="250" />
   <img src="/assets/initial_exploration_imgs/3.png" width="250" /> 
@@ -162,6 +160,18 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
 
+
+
+|       |       s1 |      s2 |       s3 |
+|:------|---------:|--------:|---------:|
+| count | 127      | 127     | 127      |
+| mean  |  98.1102 | 131.827 | 175.024  |
+| std   |  96.7247 |  70.369 |  60.1046 |
+| min   |   2      |   1     |   1      |
+| 25%   |   2      |  91     | 143      |
+| 50%   |  88      | 113     | 161      |
+| 75%   | 124.5    | 152.5   | 224.5    |
+| max   | 348      | 489     | 349      |
 
 
 ## Ferramentas
