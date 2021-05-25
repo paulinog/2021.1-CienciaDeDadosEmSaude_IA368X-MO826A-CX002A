@@ -114,7 +114,7 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Dados clínicos de TC | Domínio privado | Essa base de dados é composta por dados clínicos e laboratoriais de pacientes com lesões hepatocelulares.
 
-O primeiro conjunto de dados explorados consiste em uma tabela com informações clínicas e laboratoriais de pacientes com lesão hepática. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa e grau histológico da hepatopatia. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](#https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/data/README.md)
+O primeiro conjunto de dados explorados consiste em uma tabela com informações clínicas e laboratoriais de pacientes com lesão hepática. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa e grau histológico da hepatopatia. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/data/README.md)
 
 Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação.
 
@@ -167,7 +167,7 @@ Os dados mostraram que em geral, a invasão microvascular está localizada na re
   <img src="/assets/initial_exploration_imgs/liver_segments.jpg" />
 </p>
 
-O relatório completo gerado para cada uma das features presentes nesse conjunto de dados pode ser encontrado na pasta [assets](#https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/assets/).
+O relatório completo gerado para cada uma das features presentes nesse conjunto de dados pode ser encontrado na pasta [assets](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/assets/).
 
 ### Bases Estudadas e Adotadas
 
