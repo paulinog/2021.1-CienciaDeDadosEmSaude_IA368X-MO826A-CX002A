@@ -151,7 +151,7 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
 
-Além dos dados tabulares com informações diversas dos paciente e exames clínicos e laboratoriais realizados, investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
+Além dos dados tabulares com informações diversas dos paciente e exames clínico- laboratoriais realizados, investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
 
 Na tabela abaixo mostramos as características gerais da base. É possível notar que para alguns pacientes, existem apenas dois frames ligados ao exame TC. Sendo que na média, esse número é significativamente superior, aproximadamente 100 imagens por fase. 
 
