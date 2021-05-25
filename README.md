@@ -5,8 +5,7 @@ UNICAMP - Universidade Estadual de Campinas
 
 FEEC, IC e FCM
 
-# Projeto: Detecção e Delineamento Automático de Lesões Hepáticas Focais Benignas e Malignas em Ressonância Magnética com Contraste Hepatoespecífico Utilizando Deep Learning
-
+PREDIÇÃO DE INVASÃO MICROVASCULAR DO CARCINOMA HEPATOCELULAR PRÉ- RESSECÇÃO OU TRANSPLANTE HEPÁTICO UTILIZANDO-SE DADOS CLÍNICO-LABORATORIAIS E DE TOMOGRAFIA COMPUTADORIZADA TRIFÁSICA
 ## Apresentação
  
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://github.com/datasci4health/home), oferecida no primeiro semestre de 2021, na Unicamp.
@@ -20,85 +19,59 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 ## Descrição Resumida do Projeto
 
-Diferentes características radiômicas têm sido estudadas e estão associadas à histologia tumoral [(1)](#referências), estágio da lesão [(2)](#referências), sobrevida do paciente [(3)](#referências), metabolismo [(4)](#referências), além de muitos outros desfechos clínicos adicionais [(5)](#referências). Recentemente, um grupo de especialistas do Cancer Research UK (CRUK) e da Organização Europeia para Pesquisa e Tratamento do Câncer (EORTC) produziu 14 recomendações principais para acelerar a translação clínica da radiômica [(6)](#referências). Dentre estas, duas das recomendações foram a padronização dos biomarcadores de imagem e a revisão contínua da sua precisão [(6)](#referências). 
+O carcinoma hepatocelular (CHC) é o tumor primário hepático mais comum e a principal causa de morte em pacientes cirróticos1. O diagnóstico definitivo do CHC pode ser estabelecido apenas através de estudos de imagem, reservando-se a análise histopatológica somente para lesões indeterminadas, prática que tem sido adotada por diretrizes em todo o mundo desde 20012 (1-7). 
+A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático8. Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho8. A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência9, 10 e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão11-13. Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível14.  
+No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios14-16. Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos s ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente17.  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
 
-Na busca da padronização nos biomarcadores imaginológicos, a segmentação do tumor é a mais crítica e um componente contencioso da radiômica já que as análises de dados de recursos subsequentes dependem dos resultados da segmentação do tumor [(7,8)](#referências). Como método rotineiro de segmentação na clínica, o delineamento manual demanda mais tempo e pode estar propensa a maior variabilidade devido às fronteiras indistintas de muitos tumores. Abordagens semiautomáticas são mais rápidas e podem vir a reduzir a variabilidade interobservador, podendo contribuir, em análise subsequente, para melhoria da reprodutibilidade dos biomarcadores de imagem e da precisão dos dados de imagens médicas [(8,9)](#referências).  
-
-No contexto exposto, o objetivo deste estudo é desenvolver um algoritmo de deep learning para segmentação hepática, detecção e delineamento automático de diferentes lesões hepáticas focais (LHF) benignas e malignas em ressonância magnética (RM) com o contraste hepatoespecífico, buscando-se assim fornecer uma contribuição inicial na busca da padronização dos recursos radiômicos. Tal algoritmo pode também facilitar a dinâmica do fluxo da rotina médica radiológica na emissão de laudos incluindo a produtividade em exames de RM em Medicina Interna/ Abdome. 
-
-> https://drive.google.com/file/d/1RCdJ5aXSi8bzHtpRaHbQ-o3KIrWn5OPz/view?usp=sharing
 
 ## Perguntas de Pesquisa
 
-- É possível identificar a presença de lesões no fígado por meio de imagens de tomografia computadorizadas?
-
-- É possível identificar traços de invasão microvascular através de dados clínicos, laboratoriais e de imagem de tomografia computadorizada?
-
-- É possível predizer a invasão microvascular do CHC no pré-operatório associando-se dados clínicos e assinatura radiômica pela tomografia computadorizada trifásica? 
+- É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
 
 ## Bases de Dados - Descrição do processo de aquisição
 
-Projeto com base de dados como parte de trabalho aprovado no Comitê de Ética em Pesquisas Institucional. Foi necessário um termo de compromisso, onde os pesquisadores se comprometeram a zelar pelas informações e assegurar o sigilo e a confidencialidade dos participantes da pesquisa. Nenhum (a) participante terá seu nome revelado publicamente. Foi respeitada assim a Resolução 466/2012 e a Resolução 510/2016 do Conselho Nacional de Saúde que se fundamentam nos principais documentos internacionais sobre pesquisas envolvendo seres humanos [(10)](#referências).
 
-Os exames foram realizados em aparelho de RM 1,5 T (Tesla), com bobina específica; os pacientes realizaram jejum de 06 horas. Foram realizadas sequências sem contraste, ponderadas em T1 em fase e fora de fase e sequências coronais ponderadas em T2. Em seguida, prosseguiu-se estudo dinâmico após injeção do meio de contraste com sequências ponderadas em T1 com saturação de gordura antes e após injeção intravenosa do meio de contraste, com dose de 0,1 mL/kg de peso (equivalente a 0,025 mmol/kg) em bolus, por meio de injetora automática, velocidade de 3 mL/s, seguido de um flush de 20 ml de solução salina na mesma velocidade de infusão.  Após a injeção do ácido gadoxético, obtiveram-se imagens axiais, sequência gradiente eco ponderada em T1 com saturação de gordura, nas fases dinâmicas: fase arterial (15 a 20 segundos após o início da injeção intravenosa), portal (após 60 segundos) e de transição (após 120 segundos); e na fase hepatobiliar (10 e 20 minutos após o início da injeção intravenosa).  Entre a fase de transição e a fase hepatobiliar foram adquiridas imagens ponderadas em T2 com e sem saturação de gordura e sequências ponderadas em difusão.  Os parâmetros técnicos utilizados em cada sequência são mostrados na tabela 1. 
+O referido estudo foi aprovado pela Comissão de Ética institucional. Foram respeitadas as condições éticas pertinentes ao protocolo e seguidos rigorosamente os princípios enunciados na Declaração de Helsinque e do Ministério da Saúde do Brasil para pesquisa em seres humanos. A amostra analisada será realizada retrospectivamente em 200 nódulos (125 pacientes submetidos a transplante hepático e/ ou ressecção hepática) que tiveram confirmação histológica diagnóstica de CHC. 
+Critérios de exclusão: Pacientes que não tinham TC com parâmetros técnicos adequados para análise de lesões focais hepáticas. 
+- Pacientes cujas localizações das lesões focais hepáticas identificadas na TC não tinham correspondência exata com as localizações das lesões descritas nos estudos anatomopatológicos.
+- Nódulos com diagnóstico anatomopatológico de hepatocolangiocarcinoma.
+Tomografia computadorizada – técnica
+Todos os exames de TC realizados incluídos na amostra contemplaram minuciosamente critérios técnicos de qualidade das imagens. Foram realizados em aparelho com 64 canais de detectores, nas fases pré-contraste, arterial, portal e equilíbrio do fígado (estudo dinâmico). Foram utilizados 120 ml (ou volume menor – 100 ml - em pacientes com menos de 70 kg) de meio de contraste venoso iodado através de bomba injetora com fluxo de 4-5 ml/s, seguido de injeção de 40 ml de solução salina a 0,9%. Não foi utilizado meio de contraste via oral ou via retal. Foram adquiridas imagens nas seguintes fases do meio de contraste:
+- fase pré-contraste: obtidas imediatamente antes da injeção do meio de contraste venoso;
+- fase arterial: obtidas por detecção automática, em até 15 segundos após o pico de concentração de contraste da aorta abdominal;
+- fase portal: obtidas entre 60 e 80 segundos após o início da injeção do meio de contraste venoso;
+- fase de equilíbrio: obtidas cerca de 180 segundos após o início da injeção do meio de contraste venoso.
+Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de espessura, de todas as fases do estudo dinâmico com meio de contraste venoso da TC.
+	Dados clínico-laboratoriais e tomográficos foram avaliados, a saber: 
+-Idade (anos)
+- Sexo do paciente
+- Diâmetro máximo do tumor
+- Fígado subjacente (cirrótico/ não cirrótico)
+- Tipo de hepatopatia subjacente/ etiologia
+- HBsAg- negativo ou positivo
+- Grau patológico
+- Alfafetopreoteína, mediana (IQR)
+- Localização do nódulo (lobo esquerdo, lobo direito, lobo caudado);
+- atenuação média do nódulo nas fases dinâmicas do exame tomográfico;
+- Presença ou ausência de invasão microvascular histopatológica; 
+Parâmetros quantitativos de hipervascularização arterial e lavagem do contraste dos carcinomas foram calculados. “Regiões de Interesse” (ROIs) foram circuladas manualmente nas lesões e em duas regiões de parênquima do fígado adjacente aos CHCs, nas imagens pré-contraste e nas fases arterial, portal e equilíbrio após a injeção do meio de contraste. 
 
-> As amostras foram manualmente anotadas por especialistas clínicos, para denotar a região onde foram identificados traços que salientam a presenta da lesão.
+ 
+Figura 01: Carcinoma hepatocelular. Cortes axiais de TC pré-contraste (a) e nas fases arterial (b), portal (c) e de equilíbrio (d) com as ROIs posicionadas no nódulo e no parênquima adjacente.
 
-### Tabela 1 – Parâmetros técnicos utilizados nas sequências dos exames de ressonância magnética.
+Em nódulos heterogêneos, a área com hipervascularização arterial mais intensa foi considerada para análise, com medidas nas localizações correspondentes das demais fases. Houve cuidado para evitar vasos intratumorais, ductos biliares e artefatos.
+Subsequentemente, os seguintes parâmetros quantitativos foram calculados, baseados nas relações dos valores extraídos com as medidas objetivas de densidades:
+- Diferença de atenuação (DA): diferença entre a atenuação da lesão e a média da atenuação do parênquima adjacente; foi calculada em todas as fases do estudo dinâmico (arterial, portal e equilíbrio).
+- Razão de atenuação (RA) na fase portal - RAP: RAP =100×(AMP /ALP), onde P = fase portal, AM = atenuação média do parênquima e AL = atenuação da lesão;
+- Razão de atenuação (RA) na fase de equilíbrio - RAE: ERA =100×(AME /ALE), onde E = fase de equilíbrio, AM = atenuação média do parênquima e AL = atenuação da lesão;
+- Razão de “washout” relativo (RWR) na fase portal - RWRP: RWRP =100× (ALA − ALP) / ALA, onde A = fase arterial, P = fase portal e AL = atenuação da lesão;
+- Razão de “washout” relativo (RWR) na fase de equilíbrio - RWRE: RWRE =100× (ALA − ALE) / ALA, onde A= fase arterial, E = fase de equilíbrio e AL = atenuação da lesão;
+Estes parâmetros quantitativos do exame de tomografia computadorizada foram comparados com a presença ou ausência de invasão microvascular confirmados anatomopatologicamente. 
 
-| Parâmetro | T2 | T2 com saturação de gordura | T1 “em fase” e “fora de fase” | Difusão | Imagens ponderadas em T1 sem contraste e após contraste |
-|--|--|--|--|--|--|
-| Sequência | Fast spin-echo | Fast spin-echo | Gradient-echo FFE\* | EPI\*** | Gradient-echo 3D/TFE\** | 
-| Respiração livre | Sim | Sim | Não | Não | Não | 
-| Matriz | 268 x 184 | 300 x 261 | 236 x 161 | 152 x150 | 168 x 228 | 
-| Espessura (mm) | 6,5 | 7 | 7 | 7 | 2.5 | 
-| Espaçamento (Gap) | 1,5 | 1 | 1 | 1 | -- | 
-| Ângulo de  giro | 90 | 90 | 80 | 90 | 10 | 
-|Campo de visão (AP, LL, CC) | 297x 335 x 222 | 363x 400 x 223 | 353 x 400 x 223 | 380 x 380 x 239 | 295 x 400 x 225 | 
-| Tempo de repetição (ms) | 5299 | 1299 | 104 | 2160 | 4.1 | 
-| Tempo de eco (ms) | 160 | 80 | 4.6/2.3 | 80 | 2.0 | 
-| Tempo de aquisição | 02:48 | 02:24 | 00:21 | 02:57 | 00:15 | 
-| Número de excitações | 2 | 2 | 1 | 4 | 1 | 
-
-\* FFE- Fast field echo. 
-\** TFE- Turbo field echo. 
-\*** EPI- Echo Planar Imaging. 
-
-Dois médicos radiologistas (radiologista A com 5 anos, B com mais de 10 anos de experiência em radiologia abdominal) independentemente avaliaram os exames de imagens  de modo cego quanto a dados clínico e laboratoriais. Os casos discordantes foram discutidos, chegando-se a consenso. 
-
-O critério diagnóstico definitivo das lesões malignas (metástases hepáticas e CHCs) e dos adenomas foi baseado na confirmação anatomopatológica. Os critérios utilizados para o diagnóstico definitivo das demais lesões benignas (HNFs, cistos e hemangiomas) foram a avaliação histopatológica e/ou a ausência de alterações no acompanhamento por imagem (TC ou RM) por dois anos sem tratamento. 
-
-A amostra final de acordo com os critérios utilizados para o diagnóstico definitivo foi de 302 lesões em 136 pacientes que realizaram exames de RM utilizando o ácido gadoxético como contraste na avaliação de LHF, sendo 160 lesões benignas (53,0 %) e 142 malignas (47,0%).  A maioria das 160 lesões benignas era hiperplasia nodular focal (n=90; 56,2%) seguida de cistos (n= 36; 22,5%), hemangiomas (n=22; 13,7 %) e adenomas (n=12; 7,5%).  Das 142 lesões malignas a maioria correspondia à metástase (n=87; 61,3 %), seguida pelos CHCs (n=55; 38,7%).
-
-A quantidade de lesões de acordo com os critérios para o diagnóstico definitivo em cada paciente variou entre 1 e 5 lesões (média 2,4; DP 1,8).  O diâmetro das 160 lesões benignas variou entre 0,4 cm e 8,8 cm (média 2,7 cm; DP 1,9 cm). O diâmetro das 142 lesões malignas variou entre 0,4 cm e 7,8 cm (média 2,1 cm; DP 1,7 cm). Comparativamente, as médias dos diâmetros das lesões benignas foram maiores que as malignas (valor-p=0.0051- EEG- tabela 2).  
-
-### Tabela 2 – Análise descritiva e comparação do tamanho entre tipos de lesão.
-
-| Tamanho da lesão\* | N   |    Média    | DP   |  Mínimo |  Mediana |     Máximo |
-|---                | ---  | ---         | ---  | ---     | ---      | ---        |
-| Benignas          | 160  |      2,7    | 1,9  |  0,4    |  2,5     |        8,8 |
-| Malignas          | 142  |      2,1    | 1,7  |  0,4    |  0,9     |        7,8 |  
-|---                | ---  | ---         | ---  | ---     | ---      | ---        |
-|                   | N    |    Média    | DP   |  Mínimo |  Mediana |     Máximo |
-| Cisto             | 36   |      0,7    | 0,2  |  0,4    |  0,7     |        1,5 |
-| Hemangioma        | 22   |      0,7    | 0,2  |  0,4    |  0,7     |        0,9 | 
-| HNF               | 90   |      3,7    | 1,4  |  1,4    |  3,5     |        8,8 | 
-| Adenoma           | 12   |      4,6    | 0,4  |  4,1    |  4,6     |        5,3 | 
-| Metástase         | 87   |      0,9    | 0,5  |  0,4    |  0,8     |        3,2 | 
-| CHC               | 55   |      4,0    | 1,3  |  2,1    |  3,8     |        7,8 |
-
-\* valor-p=0.0051 (EEG) lesões benignas maiores que as malignas. 
 
 
 ## Metodologia
 
-Nosso principal objetivo é desenvolver uma solução capaz de detectar LHF a partir de imagens de ressonância magnética, e localizar a região da lesão. Nessa linha, inicialmente iremos explorar o método desenvolvido por Bousabarah et al. [(11)](#referências), os quais utilizaram a rede U-Net para classificação e delimitação de carcinoma hepatocelular mediante decomposição de amostras de ressonância magnética multifásica.
-
-Essa arquitetura é composta por dois componentes principais, um codificador e um decodificador. A função do codificador é extrair características de complexidade crescente e criar uma representação de baixo nível da imagem. O decodificador, por sua vez, é responsável por reconstruir o mapa de características da representação correspondente. Os autores mostraram que tal método reduz resultados competitivos para segmentação e classificação de regiões comprometidas do fígado.
-
-Além disso, fizemos uma breve revisão na literatura e identificamos trabalhos que nos ajudarão durante o desenvolvimento do presente trabalho.
-
-Hamm et al. [(12)](#referências) desenvolveram um método para classificação de lesões baseando-se em redes convolucionais. Para isso, os autores propuseram uma topologia de rede que empilha níveis que combinam operações em camadas totalmente conectadas, convolução e pooling.
 
 Nesse projeto adotaremos a metodologia CRISP-DM. 
 
