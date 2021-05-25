@@ -41,8 +41,8 @@ Estes parâmetros quantitativos do exame de tomografia computadorizada foram com
 | delta_tc_tx_dias | data entre o transplante e a tomografia  |
 | loc_nod |  Localização do nódulo considerando as diferentes segmentações do figado |
 | tam_nod_tc_cm | Tamanho do nódulo identificado na tomografia em centímetros |
-| par_portal | par na fase portal |
-| par_equi | par na fase equilíbrio |
+| par_portal | *Percentage Atenuation Rate* (PAR) na fase portal |
+| par_equi | *Percentage Atenuation Rate* (PAR) na fase equilíbrio |
 | ac_arterial | ac na fase arterial |
 | ac_portal | ac na fase portal |
 | ac_equi | ac na fase equilíbrio |
