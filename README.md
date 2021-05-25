@@ -214,23 +214,38 @@ O cronograma foi proposto de acordo com as etapas da metodologia CRISP-DM.
 # Referências
 
 1-	Bray F, Ferlay J, Soerjomataram I, Siegel RL, Torre LA, Jemal A. Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. Cancer J Clin. Forthcoming 2018.
+
 2-	Kudo M, Matsui O, Izumi N, Iijima H, Kadoya M, Imai Y, et al. JSH Consensus- Based Clinical Practice Guidelines for the Management of Hepatocellular Carcinoma: 2014 Update by the Liver Cancer Study Group of Japan. Liver Cancer. 2014;3(3-4):458–68.
+
 3-	Heimbach JK, Kulik LM, Finn RS, Sirlin CB, Abecassis MM, Roberts LR, et al. AASLD guidelines for the treatment of hepatocellular carcinoma. Hepatology. 2017 Dec 19;67(1):358–80.
-4-	 Omata M, Cheng A-L, Kokudo N, Kudo M, Lee J-M, Jia J, et al. Asia–Pacific
-clinical practice guidelines on the management of hepatocellular carcinoma: a 2017 update. Hepatology International. 2017 Jun 15;11(4):317–70. 
+
+4-	 Omata M, Cheng A-L, Kokudo N, Kudo M, Lee J-M, Jia J, et al. Asia–Pacific clinical practice guidelines on the management of hepatocellular carcinoma: a 2017 update. Hepatology International. 2017 Jun 15;11(4):317–70. 
+
 5-	Wald C, Russo MW, Heimbach JK, Hussain HK, Pomfret EA, Bruix J. New OPTN/UNOS Policy for Liver Transplant Allocation: Standardization of Liver Imaging, Diagnosis, Classification, and Reporting of Hepatocellular Carcinoma. Radiology. 2013 Feb;266(2):376–82.
+
 6-	Arslanoglu A, Seyal AR, Sodagari F, Sahin A, Miller FH, Salem R, et al. Current Guidelines for the Diagnosis and Management of Hepatocellular Carcinoma: A Comparative Review. American Journal of Roentgenology. 2016 Nov;207(5):W88–W98.
+
 7-	American College of Radiology [internet]. Liver imaging reporting and data system version 2018 [updated 2018 Jul; acessed 2018 Oct 31]. Available from:
 http://www.acr.org/Quality-Safety/Resources/LIRADS.
+
 8-	Bruix J, Gores GJ, Mazzaferro VHepatocellular carcinoma: clinical frontiers and perspectivesGut 2014;63:844-855.
+
 9-	Roayaie, S., et al., A system of classifying microvascular invasion to predict outcome after resection in patients with hepatocellular carcinoma. Gastroenterology, 2009. 137(3): p. 850-51. 
+
 10-	Lim, K.C., et al., Microvascular invasion is a better predictor of tumor recurrence and overall survival following surgical resection for hepatocellular carcinoma compared to the Milan criteria. Ann Surg, 2011. 254(1): p. 108-13.
+
 11-	Mazzaferro, V., et al., Predicting survival after liver transplantation in patients with hepatocellular carcinoma beyond the Milan criteria: a retrospective, exploratory analysis. Lancet Oncol, 2009. 10(1): p. 35-43. 
+
 12-	Sumie S, Kuromatsu R, Okuda K, et al. Microvascular invasion in patients with hepatocellular carcinoma and its predictable clinicopathological factors. Ann Surg Oncol. 2008;15:1375–82.
+
 13-	 Sumie S, Nakashima O, Okuda K, et al. The significance of classifying microvascular invasion in patients with hepatocellular carcinoma. Ann Surg Oncol. 2014;21:1002–9.
-14-	Hirokawa F, Hayashi M, Miyamoto Y et al (2014) Outcomes and predictors of microvascular invasion of solitary hepatocellular carcinoma. Hepatol Res 44:846–853.  
-15-	Sterling RK, Wright EC, Morgan TR et al (2012) Frequency of elevated hepatocellular carcinoma (HCC) biomarkers in patients with advanced hepatitis C. Am J Gastroenterol 107:64–74
-16-	Shim JH, Han S, Lee YJ et al (2013) Half-life of serum alphafetoprotein: an early prognostic index of recurrence and survival after hepatic resection for hepatocellular carcinoma. Ann Surg 257:708–717
+
+14-	Hirokawa F, Hayashi M, Miyamoto Y et al (2014) Outcomes and predictors of microvascular invasion of solitary hepatocellular carcinoma. Hepatol Res 44:846–853. 
+
+15-	Sterling RK, Wright EC, Morgan TR et al (2012) Frequency of elevated hepatocellular carcinoma (HCC) biomarkers in patients with advanced hepatitis C. Am J Gastroenterol 107:64–74.
+
+16-	Shim JH, Han S, Lee YJ et al (2013) Half-life of serum alphafetoprotein: an early prognostic index of recurrence and survival after hepatic resection for hepatocellular carcinoma. Ann Surg 257:708–717.
+
 17-	Gillies, R.J., P.E. Kinahan, and H. Hricak, Radiomics: Images Are More than Pictures, They Are Data. Radiology, 2016. 278(2): p. 563-77.
 
 
