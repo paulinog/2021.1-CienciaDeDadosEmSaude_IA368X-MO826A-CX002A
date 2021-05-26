@@ -19,9 +19,9 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 ## Descrição Resumida do Projeto
 
-O carcinoma hepatocelular (CHC) é o tumor primário hepático mais comum e a principal causa de morte em pacientes cirróticos1. O diagnóstico definitivo do CHC pode ser estabelecido apenas através de estudos de imagem, reservando-se a análise histopatológica somente para lesões indeterminadas, prática que tem sido adotada por diretrizes em todo o mundo desde 20012 (1-7). 
-A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático8. Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho8. A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência9, 10 e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão11-13. Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível14.  
-No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios14-16. Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos s ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente17.  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
+O carcinoma hepatocelular (CHC) é o tumor primário hepático mais comum e a principal causa de morte em pacientes cirróticos (1). O diagnóstico definitivo do CHC pode ser estabelecido apenas através de estudos de imagem, reservando-se a análise histopatológica somente para lesões indeterminadas, prática que tem sido adotada por diretrizes em todo o mundo desde 2012 (1-7). 
+A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático (8). Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho (8). A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência (9, 10) e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão (11-13). Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível14.  
+No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios (14-16). Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos à ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
 
 
 ## Perguntas de Pesquisa
@@ -31,8 +31,9 @@ No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção ci
 ## Bases de Dados - Descrição do processo de aquisição
 
 
-O referido estudo foi aprovado pela Comissão de Ética institucional. Foram respeitadas as condições éticas pertinentes ao protocolo e seguidos rigorosamente os princípios enunciados na Declaração de Helsinque e do Ministério da Saúde do Brasil para pesquisa em seres humanos. A amostra analisada será realizada retrospectivamente em 200 nódulos (125 pacientes submetidos a transplante hepático e/ ou ressecção hepática) que tiveram confirmação histológica diagnóstica de CHC. 
-Critérios de exclusão: Pacientes que não tinham TC com parâmetros técnicos adequados para análise de lesões focais hepáticas. 
+O referido estudo foi aprovado pela Comissão de Ética institucional. Foram respeitadas as condições éticas pertinentes ao protocolo e seguidos rigorosamente os princípios enunciados na Declaração de Helsinque e do Ministério da Saúde do Brasil para pesquisa em seres humanos. A amostra analisada será realizada retrospectivamente em 200 nódulos (125 pacientes submetidos a transplante hepático e/ ou ressecção hepática) que tiveram confirmação histopatológica diagnóstica de CHC. 
+Critérios de exclusão: 
+- Pacientes que não tinham TC com parâmetros técnicos adequados para análise de lesões focais hepáticas. 
 - Pacientes cujas localizações das lesões focais hepáticas identificadas na TC não tinham correspondência exata com as localizações das lesões descritas nos estudos anatomopatológicos.
 - Nódulos com diagnóstico anatomopatológico de hepatocolangiocarcinoma.
 Tomografia computadorizada – técnica
@@ -43,7 +44,7 @@ Todos os exames de TC realizados incluídos na amostra contemplaram minuciosamen
 - fase de equilíbrio: obtidas cerca de 180 segundos após o início da injeção do meio de contraste venoso.
 Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de espessura, de todas as fases do estudo dinâmico com meio de contraste venoso da TC.
 	Dados clínico-laboratoriais e tomográficos foram avaliados, a saber: 
--Idade (anos)
+- Idade (anos)
 - Sexo do paciente
 - Diâmetro máximo do tumor
 - Fígado subjacente (cirrótico/ não cirrótico)
@@ -54,7 +55,7 @@ Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de
 - Localização do nódulo (lobo esquerdo, lobo direito, lobo caudado);
 - atenuação média do nódulo nas fases dinâmicas do exame tomográfico;
 - Presença ou ausência de invasão microvascular histopatológica; 
-Parâmetros quantitativos de hipervascularização arterial e lavagem do contraste dos carcinomas foram calculados. “Regiões de Interesse” (ROIs) foram circuladas manualmente nas lesões e em duas regiões de parênquima do fígado adjacente aos CHCs, nas imagens pré-contraste e nas fases arterial, portal e equilíbrio após a injeção do meio de contraste. 
+Parâmetros quantitativos de hipervascularização arterial e lavagem do contraste dos carcinomas foram calculados através da avaliação manual consensual entre dois Médicos Radiologistas com experiência em Radiologia abdominal. “Regiões de Interesse” (ROIs) foram circuladas manualmente nas lesões e em duas regiões de parênquima do fígado adjacente aos CHCs, nas imagens pré-contraste e nas fases arterial, portal e equilíbrio após a injeção do meio de contraste. 
 
 <p float="left">
   <img src="/assets/initial_exploration_imgs/different_phases_chc.JPG" width="500" />
@@ -69,7 +70,7 @@ Subsequentemente, os seguintes parâmetros quantitativos foram calculados, basea
 - Razão de atenuação (RA) na fase de equilíbrio - RAE: ERA =100×(AME /ALE), onde E = fase de equilíbrio, AM = atenuação média do parênquima e AL = atenuação da lesão;
 - Razão de “washout” relativo (RWR) na fase portal - RWRP: RWRP =100× (ALA − ALP) / ALA, onde A = fase arterial, P = fase portal e AL = atenuação da lesão;
 - Razão de “washout” relativo (RWR) na fase de equilíbrio - RWRE: RWRE =100× (ALA − ALE) / ALA, onde A= fase arterial, E = fase de equilíbrio e AL = atenuação da lesão;
-Estes parâmetros quantitativos do exame de tomografia computadorizada foram comparados com a presença ou ausência de invasão microvascular confirmados anatomopatologicamente. 
+Estes parâmetros quantitativos do exame de tomografia computadorizada foram também comparados com a presença ou ausência de invasão microvascular confirmados anatomopatologicamente. 
 
 
 
@@ -80,9 +81,9 @@ Nesse projeto adotaremos a metodologia CRISP-DM.
 
 ## Bases de Dados e Evolução
 
-Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínicas e laboratoriais de pacientes com lesões no fígado (CHC) e relacionadas ao exame histopatológico de presença ou ausência de IMV pré-operatória do CHC. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada  dos pacientes em questão (prospecção de radiômica).
+Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínico-laboratoriais de pacientes com lesões no fígado (CHC) e relacionadas ao exame histopatológico de presença ou ausência de IMV pré-operatória do CHC. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada  dos pacientes em questão (prospecção de radiômica).
 
-A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com lesão que se estendem por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
+A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com mais de uma lesão, e determinadas lesões com dimensões que se estendem por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
 
 ### Bases Estudadas, mas Não Adotadas
 
@@ -90,13 +91,15 @@ Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Dados clínicos de TC | Domínio privado | Essa base de dados é composta por dados clínico-laboratoriais de pacientes com CHCs.
 
-O primeiro conjunto de dados explorados consiste em uma tabela com informações clínic0-laboratoriais de pacientes com CHCs confirmados histopatologicamente. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa da hepatopatia e  grau histológico do CHC. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/tree/main/data)
+O primeiro conjunto de dados explorados consiste em uma tabela com informações clínico-laboratoriais de pacientes com CHCs confirmados histopatologicamente. Contém 26 características que variam desde o identificador dos pacientes e localização do nódulo até a causa da hepatopatia e  grau histológico do CHC. A descrição completa de cada uma das features presentes nessa base de dados pode ser encontrada [aqui](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/tree/main/data)
 
 Das 26 características descritas na base de dados, 4 delas estavam completamente nulas, para todos os pacientes e nódulos listados. Essas quatro variáveis estão associadas a dados de exame alfafetoproteína, da recorrência do câncer hepático e se houve algum caso de morte desde o início da investigação.
 
 Além dessas colunas com dados faltantes, 39 outros valores não estavam presentes na base, referentes a data de nascimento dos pacientes (embora tenhamos a idade dos pacientes, como substituto). Considerando a pouca importância dessas informações já que possuímos a idade, não realizamos nenhuma estratégia para substituição dos dados faltantes. 
 
 Existem 4 features categóricas que descrevem o grau histológico, o sexo, a presença/ ausência de invasão microvascular e a causa da hepatopatia. Realizamos a transformação manualmente apenas para fins de aprendizagem. 
+
+Dentre os 125 pacientes, 98 (78,4%) eram do sexo masculino. A mediana da idade foi de 59 anos (intervalo entre 36 e 81 anos). Sessenta e nove (55,2%) pacientes tinham um nódulo e 56 (44,8%) tinham dois ou mais nódulos. O tamanho médio dos nódulos foi de 3,0 cm (1,0-25,0 cm, mediana de 2,9). A invasão microvascular foi encontrada em 77 (38,5%) CHCs na análise histológica.
 
 Verificamos que a maioria dos casos de hepatopatia subjacente foram causados pelo Vírus da Hepatite C (VHC), sendo majoritariamente pessoas do sexo masculino. 
 
@@ -112,9 +115,9 @@ Essa característica já havia sido descrita em alguns trabalhos da literatura m
 
 Abaixo mostramos alguns gráficos de histogramas de algumas features presentes na base de dados. 
 
-Através desses gráficos, é possível notar que a maior parte das lesões são pequenas. Não é possível, por outro lado, dizer se a presença de invasão microvascular está ligada majoritariamente a lesões pequenas, visto que existem poucas grandes lesões descritas nesse conjunto.
+Através desses gráficos, é possível notar que a maior parte das lesões são pequenas. Não é possível, por outro lado, dizer se a presença de invasão microvascular está ligada majoritariamente a lesões maiores, visto que existem poucas grandes lesões descritas nesse conjunto.
 
-A fração de contraste arterial (AEF), também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
+A diferença de atenuação (DA) calculada manualmente de maneira consensual entre os dois Médicos Radiologistas nas diferentes fases dinâmicas do estudo tomográfico, incluindo a fase asrterial, também não aparenta ter nenhuma correlação com a identificação de invasão microvascular.
 
 Nos gráficos abaixo mostramos a distribuição dos dados, rotulados com a informação de presença ou ausência de invasão microvascular. A base de dados é ligeiramente desbalanceada, mas iremos lidar com isso através de técnicas de normalização por batch ou ponderando as classes.
 
@@ -130,7 +133,7 @@ Nos gráficos abaixo mostramos a distribuição dos dados, rotulados com a infor
   <img src="/assets/initial_exploration_imgs/10.png" width="250" /> 
 </p>
 
-Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presenta da invasão microvascular. Essa característica sugere que não é possível, a partir desses dados, inferir a probabilidade de um paciente conter ou não invasão microvascular, reforçando a ideia original de que para identificar a presença ou a probabilidade de uma invasão microvascular, devemos considerar principalmente durante a análise o exame tomográfico realizado.
+Abaixo mais um gráfico onde confrontamos todas as features com todas. Embora algumas sigam uma distribuição normal ou linear, nenhuma está correlacionada a presença da invasão microvascular. Essa característica sugere que não é possível, a partir desses dados, inferir a probabilidade de um paciente conter ou não invasão microvascular pré-operatoriamente, reforçando a ideia original de que para identificar a presença ou a probabilidade de uma invasão microvascular do CHC, devemos considerar principalmente durante a análise dados extraídos do exame de TC trifásico realizado.
 
 <p float="center">
   <img src="/assets/initial_exploration_imgs/all.png" />
@@ -153,7 +156,7 @@ Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de
 
 Além dos dados tabulares com informações diversas dos paciente e exames clínico- laboratoriais realizados, investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
 
-Na tabela abaixo mostramos as características gerais da base. É possível notar que para alguns pacientes, existem apenas dois frames ligados ao exame TC. Sendo que na média, esse número é significativamente superior, aproximadamente 100 imagens por fase. 
+Na tabela abaixo mostramos as características gerais da base. É possível notar que para alguns pacientes, existem apenas dois frames ligados ao exame de TC. Sendo que na média, esse número é significativamente superior, aproximadamente 100 imagens por fase. 
 
 
 |       |       s1 |      s2 |       s3 |
@@ -171,7 +174,7 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 
 ## Próximos passos
 
-Para as próximas semanas, iremos iniciar uma investigação mais profunda considerando as imagens. Nosso principal objetivo será explorar métodos para identificação de invasão microvascular através de imagens de tomografia computadorizada. 
+Para as próximas semanas, iremos iniciar uma investigação mais profunda considerando as imagens. Nosso principal objetivo será explorar métodos para identificação de invasão microvascular do CHC no pré-operatorio através de imagens de tomografia computadorizada contrastada trifásica. 
 
 
 ## Ferramentas
