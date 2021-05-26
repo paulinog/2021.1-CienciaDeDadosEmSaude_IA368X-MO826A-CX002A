@@ -107,7 +107,7 @@ Realizamos um estudo da correlação das features e chegamos a resultados equiva
 
 
 <p float="left">
-  <img src="/assets/initial_exploration_imgs/pearson_corr_change_hist.png" width="500" />
+  <img src="/assets/initial_exploration_imgs/person_corr_change_hist.png" width="500" />
   <img src="/assets/initial_exploration_imgs/spearman_corr_change_hist.png" width="500" /> 
 </p>
 
@@ -144,6 +144,12 @@ Os dados mostraram que em geral, a invasão microvascular está localizada na re
 
 <p float="center">
   <img src="/assets/initial_exploration_imgs/liver_segments.jpg" />
+</p>
+
+Os exames de TC foram disponibilizados em dois formatos: JPEG e DCM (DICOM). Utilizamos a biblioteca DICOM para exibições iniciais, conforme abaixo.
+
+<p float="left">
+  <img src="/assets/initial_exploration_imgs/dicom_phases.png" width="500" />
 </p>
 
 O relatório completo gerado para cada uma das features presentes nesse conjunto de dados pode ser encontrado na pasta [assets](https://github.com/paulinog/2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A/blob/main/assets/initial_exploration_imgs/profiling.html).
