@@ -1,13 +1,11 @@
-# 2021.1-CienciaDeDadosEmSaude_IA368X-MO826A-CX002A
-Disciplina de Ciência e Visualização de Dados em Saúde (2021.1)
 
-UNICAMP - Universidade Estadual de Campinas
+# Projeto - Entrega Final
 
-FEEC, IC e FCM
+# Projeto `Predição de Invasão Microvascular do Carcinoma Hepatocelular Pré- Ressecção ou Transplante Hepático Utilizando-se Dados Clínico-Laboratoriais e de Tomografia Computadorizada Trifásica`
 
-PREDIÇÃO DE INVASÃO MICROVASCULAR DO CARCINOMA HEPATOCELULAR PRÉ- RESSECÇÃO OU TRANSPLANTE HEPÁTICO UTILIZANDO-SE DADOS CLÍNICO-LABORATORIAIS E DE TOMOGRAFIA COMPUTADORIZADA TRIFÁSICA
+# Project `<Title in English>`
 
-## Apresentação
+# Apresentação
 
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://github.com/datasci4health/home), oferecida no primeiro semestre de 2021, na Unicamp.
 
@@ -18,69 +16,88 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | [Guilherme Paulino](https://github.com/paulinog) | 117119  | Computação / FEEC |
 | [Stephane de Freitas Schwarz](https://github.com/stephanefschwarz) | 211518  | Computação / IC |
 
-## Descrição Resumida do Projeto
+
+# Descrição Resumida do Projeto
+> Descreva resumidamente o tema do projeto. O resumo idealmente deve: apresentar o contexto gerador e motivação; indicar o problema; apresentar a sua solução para o problema; indicar porque a sua solução é melhor do que os esforços atuais (não obrigatório); concluir com os resultados alcançados.
 
 O carcinoma hepatocelular (CHC) é o tumor primário hepático mais comum e a principal causa de morte em pacientes cirróticos (1). O diagnóstico definitivo do CHC pode ser estabelecido apenas através de estudos de imagem, reservando-se a análise histopatológica somente para lesões indeterminadas, prática que tem sido adotada por diretrizes em todo o mundo desde 2012 (1-7). 
 A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático (8). Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho (8). A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência (9, 10) e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão (11-13). Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível (14).  
 No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios (14-16). Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos à ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
 
-## Vídeos do Projeto
-### Vídeo da Proposta
+# Vídeos do Projeto
+
+## Vídeo da Proposta
 > https://drive.google.com/file/d/1RCdJ5aXSi8bzHtpRaHbQ-o3KIrWn5OPz/view?usp=sharing
 
-### Vídeo da Apresentação Final
->
+## Vídeo da Apresentação Final
+> Link para vídeo da apresentação final do projeto (máximo 8 minutos). *TODOS OS MEMBROS DO GRUPO DEVEM APARECER NO VÍDEO*.
 
-## Slides do Projeto
-### Slides da Proposta
->
+# Slides do Projeto
 
-### Slides da Apresentação Final
->
+## Slides da Proposta
+> Link para slides de apresentação da proposta do projeto.
 
-## Introdução e Referenciais de Teóricos
+## Slides da Apresentação Final
+> Link para slides da apresentação final do projeto.
 
-> Contextualização do projeto
+# Introdução e Referenciais de Teóricos
 
-> Caracterização do problema
-
-> Motivação
-
-> Relevância
-
-> Trabalhos relacionados
+## Contextualização do projeto
 
 > Indicação (bastante resumida) da análise proposta
-
+>
 > Indicação (bastante resumida) dos resultados alcançados
 
+## Trabalhos Relacionados
+
+Pesquisas recentes na área de detecção e predição de invasão microvascular, (mVI, do inglês, Microvascular invasion) em imagens de ressonância magnética (RM), têm se beneficiado do advanto dos algoritmos de aprendizagem de máquina, mais precisamente, das redes neurais artificiais. Nos últimos anos, essas redes tem mostrado um potencial competitivo para explorar a mais variada gama de dados, inclusive, de imagens médicas.
+
+Zheng et al. (18) elaboraram um método para predição de mVI através de uma análise quantitativa das imagens de RM. Para isso, foram coletados inicialmente achados radiômicos graduados, como quantidade e diâmetro dos tumores, identificação de artérias internas do tumor e realce do rebardo periférico, dentro outros. Subsequentemente foram coletados dados de textura da periferia do tumor e do parênquima hepática adjacente. Depois, os dados foram aplicados a dois modelos multivariados. Os autores angariaram uma AUC = 88.00 usando dados de textura extraídos com o Local Binary Pattern (LBP) e dados clínicos do pré-operatório.
+
+Nebbia et al. (19) propuseram a utilizaram de três tipos de características para classificação de mVI no fígado, que são: (I) características presentes no tumor; (II) características que estão à margem da lesão; e (III) a união de ambas. Para isso, os autores segmentaram manualmente a região de interesse, no caso, a região lesada do fígado. Uma vez com a lesão salientada a região peri tumoral (cerca de 1cm ao redor do tumor) foi automaticamente definida. Em seguida, 100 características radiômicas foram extraídas dos volumes resultantes da segmentação, as quais foram submetidas ao LASSO para seleção das mais discriminativas. O vetor de características final foi passado para um classificador binário SVM que determina a presença ou ausência de mVI. Os autores alcançaram bons resultados (AUC = 86.99%) quando utilizados dados radiômicos tanto da sequência T2 quanto da portal. Os autores notaram que as informações extraídas apenas da margem das lesões são mais discriminativa para a identificação de mVI.
+
+Song et al. (20) exploraram esse problema usando redes neurais profundas. Para isso, foi desenvolvida uma rede com oito entradas. Cada entrada processa um volume 3D de interesse (), com oito sequências da MRI. As entradas são processadas paralelamente, pela mesma topologia de rede, 4 camadas de convolução empilhadas. As saídas dessas convoluções são concatenadas junto a parâmetros clínicos e passadas para uma camada totalmente conectada com ativação softmax, que gera a probabilidade de haver ou não invasão. O arcabouço alcançou o valor de AUC equivalente a 93.33%. Superando os métodos anteriores que utilizavam informações radiômicas, meticulosamente extraídas por especialistas da área.
+
+Apesar de todos esses métodos apresentarem resultados competitivos, todos são dependentes de segmentação e identificação prévia da área de interesse. Nessa linha, objetivamos o desenvolvimento de um consórcio de algoritmos baseados em redes neurais profundas, que dado um volume 3D não isotrópico (e.g. tem dimensões distintas), sejamos capazes de determinar a probabilidade de um paciente conter ou não invasão microvascular.
+
+# Perguntas de Pesquisa
+
+> É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
+
+# Objetivos do Projeto
+> Como seu projeto propôs abordar o problema apresentado.
+
+# Metodologia
+> Abordagem adotada pelo projeto na busca pela resposta às perguntas de pesquisa.
+> Justificar teoricamente, sempre que possível, a metodologia adotada.
+
+## Bases de Dados e Evolução
+
+O referido estudo foi aprovado pela Comissão de Ética institucional. Foram respeitadas as condições éticas pertinentes ao protocolo e seguidos rigorosamente os princípios enunciados na Declaração de Helsinque e do Ministério da Saúde do Brasil para pesquisa em seres humanos. A amostra analisada será realizada retrospectivamente em 200 nódulos (125 pacientes submetidos a transplante hepático e/ou ressecção hepática) que tiveram confirmação histopatológica diagnóstica de CHC. 
 
 
-## Perguntas de Pesquisa
+**Critérios de exclusão:**
 
-- É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
-
-## Objetivos do Projeto
-
-## Metodologia
-
-
-### Descrição do Processo de Aquisição
-
-
-O referido estudo foi aprovado pela Comissão de Ética institucional. Foram respeitadas as condições éticas pertinentes ao protocolo e seguidos rigorosamente os princípios enunciados na Declaração de Helsinque e do Ministério da Saúde do Brasil para pesquisa em seres humanos. A amostra analisada será realizada retrospectivamente em 200 nódulos (125 pacientes submetidos a transplante hepático e/ ou ressecção hepática) que tiveram confirmação histopatológica diagnóstica de CHC. 
-Critérios de exclusão: 
 - Pacientes que não tinham TC com parâmetros técnicos adequados para análise de lesões focais hepáticas. 
 - Pacientes cujas localizações das lesões focais hepáticas identificadas na TC não tinham correspondência exata com as localizações das lesões descritas nos estudos anatomopatológicos.
 - Nódulos com diagnóstico anatomopatológico de hepatocolangiocarcinoma.
-Tomografia computadorizada – técnica
-Todos os exames de TC realizados incluídos na amostra contemplaram minuciosamente critérios técnicos de qualidade das imagens. Foram realizados em aparelho com 64 canais de detectores, nas fases pré-contraste, arterial, portal e equilíbrio do fígado (estudo dinâmico). Foram utilizados 120 ml (ou volume menor – 100 ml - em pacientes com menos de 70 kg) de meio de contraste venoso iodado através de bomba injetora com fluxo de 4-5 ml/s, seguido de injeção de 40 ml de solução salina a 0,9%. Não foi utilizado meio de contraste via oral ou via retal. Foram adquiridas imagens nas seguintes fases do meio de contraste:
+
+**Tomografia computadorizada – técnica**
+
+Todos os exames de TC realizados incluídos na amostra contemplaram minuciosamente critérios técnicos de qualidade das imagens. Foram realizados em aparelho com 64 canais de detectores, nas fases pré-contraste, arterial, portal e equilíbrio do fígado (estudo dinâmico). Foram utilizados 120 ml (ou volume menor – 100 ml - em pacientes com menos de 70 kg) de meio de contraste venoso iodado através de bomba injetora com fluxo de 4-5 ml/s, seguido de injeção de 40 ml de solução salina a 0,9%. Não foi utilizado meio de contraste via oral ou via retal. 
+
+Foram adquiridas imagens nas seguintes fases do meio de contraste:
+
 - fase pré-contraste: obtidas imediatamente antes da injeção do meio de contraste venoso;
 - fase arterial: obtidas por detecção automática, em até 15 segundos após o pico de concentração de contraste da aorta abdominal;
 - fase portal: obtidas entre 60 e 80 segundos após o início da injeção do meio de contraste venoso;
 - fase de equilíbrio: obtidas cerca de 180 segundos após o início da injeção do meio de contraste venoso.
+
 Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de espessura, de todas as fases do estudo dinâmico com meio de contraste venoso da TC.
-	Dados clínico-laboratoriais e tomográficos foram avaliados, a saber: 
+
+
+Dados clínico-laboratoriais e tomográficos foram avaliados, a saber: 
+
 - Idade (anos)
 - Sexo do paciente
 - Diâmetro máximo do tumor
@@ -92,31 +109,36 @@ Foram analisadas as imagens dos cortes axiais das TCs, reconstruídas com 3mm de
 - Localização do nódulo (lobo esquerdo, lobo direito, lobo caudado);
 - atenuação média do nódulo nas fases dinâmicas do exame tomográfico;
 - Presença ou ausência de invasão microvascular histopatológica; 
+
 Parâmetros quantitativos de hipervascularização arterial e lavagem do contraste dos carcinomas foram calculados através da avaliação manual consensual entre dois Médicos Radiologistas com experiência em Radiologia abdominal. “Regiões de Interesse” (ROIs) foram circuladas manualmente nas lesões e em duas regiões de parênquima do fígado adjacente aos CHCs, nas imagens pré-contraste e nas fases arterial, portal e equilíbrio após a injeção do meio de contraste. 
 
 <p float="left">
   <img src="/assets/initial_exploration_imgs/different_phases_chc.JPG" width="500" />
 </p>
 
-Figura 01: Carcinoma hepatocelular. Cortes axiais de TC pré-contraste (a) e nas fases arterial (b), portal (c) e de equilíbrio (d) com as ROIs posicionadas no nódulo e no parênquima adjacente.
+**Figura 01: Carcinoma hepatocelular. Cortes axiais de TC pré-contraste (a) e nas fases arterial (b), portal (c) e de equilíbrio (d) com as ROIs posicionadas no nódulo e no parênquima adjacente.**
 
 Em nódulos heterogêneos, a área com hipervascularização arterial mais intensa foi considerada para análise, com medidas nas localizações correspondentes das demais fases. Houve cuidado para evitar vasos intratumorais, ductos biliares e artefatos.
+
 Subsequentemente, os seguintes parâmetros quantitativos foram calculados, baseados nas relações dos valores extraídos com as medidas objetivas de densidades:
+
 - Diferença de atenuação (DA): diferença entre a atenuação da lesão e a média da atenuação do parênquima adjacente; foi calculada em todas as fases do estudo dinâmico (arterial, portal e equilíbrio).
-- Razão de atenuação (RA) na fase portal - RAP: RAP =100×(AMP /ALP), onde P = fase portal, AM = atenuação média do parênquima e AL = atenuação da lesão;
-- Razão de atenuação (RA) na fase de equilíbrio - RAE: ERA =100×(AME /ALE), onde E = fase de equilíbrio, AM = atenuação média do parênquima e AL = atenuação da lesão;
-- Razão de “washout” relativo (RWR) na fase portal - RWRP: RWRP =100× (ALA − ALP) / ALA, onde A = fase arterial, P = fase portal e AL = atenuação da lesão;
-- Razão de “washout” relativo (RWR) na fase de equilíbrio - RWRE: RWRE =100× (ALA − ALE) / ALA, onde A= fase arterial, E = fase de equilíbrio e AL = atenuação da lesão;
+
+- Razão de atenuação (RA) na fase portal - RAP: RAP = 1 00×(AMP /ALP), onde P = fase portal, AM = atenuação média do parênquima e AL = atenuação da lesão;
+
+- Razão de atenuação (RA) na fase de equilíbrio - RAE: ERA = 100×(AME /ALE), onde E = fase de equilíbrio, AM = atenuação média do parênquima e AL = atenuação da lesão;
+
+- Razão de “washout” relativo (RWR) na fase portal - RWRP: RWRP = 100× (ALA − ALP) / ALA, onde A = fase arterial, P = fase portal e AL = atenuação da lesão;
+
+- Razão de “washout” relativo (RWR) na fase de equilíbrio - RWRE: RWRE = 100× (ALA − ALE) / ALA, onde A= fase arterial, E = fase de equilíbrio e AL = atenuação da lesão;
+
 Estes parâmetros quantitativos do exame de tomografia computadorizada foram também comparados com a presença ou ausência de invasão microvascular confirmados anatomopatologicamente. 
-
-
-## Bases de Dados e Evolução
 
 Nesse projeto exploramos apenas uma base de dados. Contudo, esta se divide em dois grupos de dados. No primeiro conjunto foram exploradas informações tabulares clínico-laboratoriais de pacientes com lesões no fígado (CHC) e relacionadas ao exame histopatológico de presença ou ausência de IMV pré-operatória do CHC. No segundo conjunto de dados, realizamos uma investigação inicial nas imagens de tomografia computadorizada  dos pacientes em questão (prospecção de radiômica).
 
 A base é constituída por 200 lesões de 125 indivíduos. Assim, existem pacientes com mais de uma lesão, e determinadas lesões com dimensões que se estendem por mais de um segmento do fígado. A abordagem de classificar a lesão por regiões é fundamental visto que intervenções cirúrgicas podem ser adotadas para remover apenas a parte lesada, sem a necessidade de remoção da peça inteira.
 
-### Bases Estudadas, mas Não Adotadas
+### Bases Estudadas mas Não Adotadas
 
 Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
@@ -187,7 +209,7 @@ O relatório completo gerado para cada uma das features presentes nesse conjunto
 
 ### Bases Estudadas e Adotadas
 
-Base de Dados | Endereço na Web | Resumo descritivo
+ase de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
 
@@ -208,23 +230,68 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 | max   | 348      | 489     | 349      |
 
 
-## Análises Realizadas
+### Integração entre Bases e Análise Exploratória
 
+> Descreva etapas de integração de fontes de dados e apresente a seguir uma análise exploratória que envolva ambas.
+>
+>
+>
+> Resultados de Análise Exploratória
+> * use estatística descritiva e gráficos;
+> * inclua gráficos de sobre a distribuição dos dados (e.g., histogramas e boxplots);
+> * analise correlação e use gráficos de dispersão;
+> * descreva os resultados/gráficos, os analise e contextualize com o tema definido.
+
+# Análises Realizadas
+> Descrição detalhada das análises realizadas.
+>
+>
+>
+>Relate aqui também a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
+>
+>
+>
+> Nesta seção ou na seção de Resultados podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
+>
+> Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. Não utilize trechos extensos de código. Se algum código funcionar online (tal como um Jupyter Notebook), aqui pode haver links. No caso do Jupyter, preferencialmente para o Binder abrindo diretamente o notebook em questão.
+
+~~~python
+df = pd.read_excel("/content/drive/My Drive/Colab Notebooks/dataset.xlsx");
+sns.set(color_codes=True);
+sns.distplot(df.Hemoglobin);
+plt.show();
+~~~
 
 ## Ferramentas
 
 Ferramenta | Função
 ----- | -----
 [Python 3](https://www.python.org/) | Linguagem de programação a ser utilizada para o desenvolvimento das soluções propostas.
-[Pytorch](https://pytorch.org) | Arcabouço de código aberto para desenvolvimento de modelos de aprendizagem de máquina e aprendizagem profunda.
+[Keras](https://keras.io/) | Arcabouço de código aberto para desenvolvimento de modelos de aprendizagem de máquina e aprendizagem profunda.
 [Pandas](https://pandas.pydata.org/) | Ferramenta para manipulação e análise de dados.
 [Numpy](https://numpy.org/) | Biblioteca utilizada para manipulação de vetores multidimensionais.
 [Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
+[pydicom](https://pydicom.github.io/) | Biblioteca específica para manipulação de imagens médicas em formato dcm.
 
-## Resultados
-## Discussão
-## Conclusão
-## Trabalhos Futuros
+# Resultados
+> Descrição dos resultados mais importantes obtidos.
+>
+> Apresente os resultados da forma mais rica possível, com gráficos e tabelas. Mesmo que o seu código rode online em um notebook, copie para esta parte a figura estática. A referência a código e links para execução online pode ser feita aqui ou na seção de Análises Realizadas (o que for mais pertinente).
+
+# Discussão
+> Discussão dos resultados. Relacionar os resultados com as perguntas de pesquisa ou hipóteses avaliadas.
+>
+> A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
+
+# Conclusão
+> Destacar as principais conclusões obtidas no desenvolvimento do projeto.
+>
+> Destacar os principais desafios enfrentados.
+>
+> Principais lições aprendidas.
+
+# Trabalhos Futuros
+> O que poderia ser melhorado se houvesse mais tempo?
 
 # Referências Bibliográficas
 
@@ -263,56 +330,8 @@ http://www.acr.org/Quality-Safety/Resources/LIRADS.
 
 17-	Gillies, R.J., P.E. Kinahan, and H. Hricak, Radiomics: Images Are More than Pictures, They Are Data. Radiology, 2016. 278(2): p. 563-77.
 
+18- Zheng, J., Chakraborty, J., Chapman, W.C., Gerst, S., Gonen, M., Pak, L.M., Jarnagin, W.R., DeMatteo, R.P., Do, R.K., Simpson, A.L. and Allen, P.J., 2017. Preoperative prediction of microvascular invasion in hepatocellular carcinoma using quantitative image analysis. Journal of the American College of Surgeons, 225(6), pp.778-788.
 
+19- Nebbia, G., Zhang, Q., Arefan, D., Zhao, X. and Wu, S., 2020. Pre-operative Microvascular Invasion Prediction Using Multi-parametric Liver MRI Radiomics. Journal of Digital Imaging, pp.1-11.
 
-# Estrutura do Repositório
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-
----
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+20- Song, D., Wang, Y., Wang, W., Wang, Y., Cai, J., Zhu, K., Lv, M., Gao, Q., Zhou, J., Fan, J. and Rao, S., 2021. Using deep learning to predict microvascular invasion in hepatocellular carcinoma based on dynamic contrast-enhanced MRI combined with clinical parameters. Journal of Cancer Research and Clinical Oncology, pp.1-11.
