@@ -243,6 +243,11 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 > * descreva os resultados/gráficos, os analise e contextualize com o tema definido.
 
 # Análises Realizadas
+
+<p float="left">
+  <img src="/assets/initial_exploration_imgs/net_topology.png" width="500" />
+</p>
+
 > Descrição detalhada das análises realizadas.
 >
 >
