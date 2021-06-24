@@ -1,7 +1,5 @@
 
-# Projeto - Entrega Final
-
-# Projeto `Predição de Invasão Microvascular do Carcinoma Hepatocelular Pré- Ressecção ou Transplante Hepático Utilizando-se Dados Clínico-Laboratoriais e de Tomografia Computadorizada Trifásica`
+# Predição de Invasão Microvascular do Carcinoma Hepatocelular Pré- Ressecção ou Transplante Hepático Utilizando-se Dados Clínico-Laboratoriais e de Tomografia Computadorizada Trifásica
 
 # Project `<Title in English>`
 
@@ -65,9 +63,19 @@ Apesar de todos esses métodos apresentarem resultados competitivos, todos são 
 > É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
 
 # Objetivos do Projeto
-> Como seu projeto propôs abordar o problema apresentado.
+
+O principal objetivo do presente trabalho, é verificar se é possível identificar a presença de invasões microvasculares em imagens de ressonância magnética do fígado. Para isso, exploramos técnicas de análise de imagens que se baseiam em arquiteturas de redes neurais convolucionais. 
 
 # Metodologia
+
+Para lidar com o desafio da identificação da presença de mVI, consideramos duas frentes de pesquisa. Na primeira, buscamos compreender se dado com conjunto de imagens volumétricas, não isotrópicas, de diferentes fases, era possível verificar a presença de mVI. Na segunda frente, exploramos meios para melhorar a identificação através da determinação prévia de regiões de interesse.
+
+---
+
+Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissões são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nessa sentido, buscamos explorar meios mais robustos, capazes de extraír informações discriminativa dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
+
+O problema é descrito como: Seja $`V^P_i`$ um e
+
 > Abordagem adotada pelo projeto na busca pela resposta às perguntas de pesquisa.
 > Justificar teoricamente, sempre que possível, a metodologia adotada.
 
