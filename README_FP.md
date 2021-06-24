@@ -82,17 +82,17 @@ Para lidar com o desafio da identificação da presença de mVI, consideramos du
 
 ---
 
-Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissões são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nessa sentido, buscamos explorar meios mais robustos, capazes de extrair informações discriminativas dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
+Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissores são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nesse sentido, buscamos explorar meios mais robustos, capazes de extrair informações discriminativas dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
 
-Para isso propusemos o uso de redes neurais convolucionais de 2 e 3 dimensões. Essas redes recebem em paralelo três entrada, que correspondem a três fases do exame, a saber, fase arterial, portal e equilíbrio. 
+Para isso propusemos o uso de redes neurais convolucionais de 2 e 3 dimensões. Essas redes recebem em paralelo três entradas, que correspondem a três fases do exame, a saber, fase arterial, portal e equilíbrio. 
 
-Para cada uma dessas entradas aplicamos dois filtros de convolução. A ideia essa estrutura aqui é salientar características de alta ordem que descrevem as classes do problema. Para toda camada de convolução adicionamos um mecanismo de pooling para, de modo a reduzir a quantidade de parâmetros, além de manter apenas as características mais discriminativas.
+Para cada uma dessas entradas aplicamos dois filtros de convolução visando salientar características de alta ordem que descrevem as classes do problema. Para toda camada de convolução adicionamos um mecanismo de pooling, de modo a reduzir a quantidade de parâmetros, além de manter apenas as características mais discriminativas.
 
-Em seguida, a rede transforma os volumes resultantes em sinais unidimensionais para serem concatenados. A racionalidade por trás dessa abordagem é proporcionar que a rede consiga olhar simultaneamente para todas as fases e encontra pontos de similaridade entre as entradas, e intuitivamente, contribuir para aumentar a sensibilidade do arcabouço.
+Em seguida, a rede transforma os volumes resultantes em sinais unidimensionais para serem concatenados. A racionalidade por trás dessa abordagem é proporcionar que a rede consiga olhar simultaneamente para todas as fases e encontrar pontos de similaridade entre as entradas, e intuitivamente, contribuir para aumentar a sensibilidade do arcabouço.
 
 Por fim, o vetor gerado é passado por três camadas totalmente conectadas até chegar a camada de decisão final. Intercalamos nessas camadas operações de dropout 30% para evitar a especialização dos dados durante o treinamento.
 
-Esse consórcio de convoluções foi construído baseado na visão dos especialistas que afirmam que a micro invasão pode ser melhor encontra quando todas as fases são consideradas no processo de tomada de decisão. Vale lembrar que para o ser humano, não é possível identificar uma micro invasão olhando para dados de ressonância.
+Esse consórcio de convoluções foi construído baseado na visão dos especialistas que afirmam que a micro invasão pode ser melhor encontrada quando todas as fases são consideradas no processo de tomada de decisão. Vale lembrar que para o ser humano, não é possível identificar uma micro invasão olhando para dados de ressonância.
 
 A imagem abaixo mostra a arquitetura desenvolvimento para o estudo desse projeto.
 
