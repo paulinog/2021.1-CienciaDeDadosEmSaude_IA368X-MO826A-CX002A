@@ -343,7 +343,7 @@ Tentamos reduzir o erro adicionando regularização nas camadas, porém não con
 
 ### Experimento 4
 
-Em seguida, considerando os 8 slices a partir da primeira ocorrência da lesão, testamos novamente a rede 2D. Na tabela abaixo, mostramos os resultados angariados em cada conjunto. Os valores do teste foi computado usando a melhor configuração dos parâmetros explorados. Notem que as métricas de avaliação do conjunto de teste foram substancialmente maiores e melhores que as do conjunto de validação. Sugerindo que existe alguma característica no conjunto de validação de dificulta a identificação das invasões microvasculares.
+Em seguida, considerando os 8 slices a partir da primeira ocorrência da lesão, testamos novamente a rede 2D. Na tabela abaixo, mostramos os resultados angariados em cada conjunto. Os valores do teste foram computados usando a melhor configuração dos parâmetros explorados. Notem que as métricas de avaliação do conjunto de teste foram substancialmente maiores e melhores que as do conjunto de validação. Sugerindo que existe alguma característica no conjunto de validação de dificulta a identificação das invasões microvasculares.
 
 Buscamos compreender se o tamanho da lesão estava influenciando nos resultados da classificação, entrementes, não encontramos nenhum padrão entre o tamanho as amostras e as taxas de falso positivo e negativo. 
 
@@ -359,7 +359,13 @@ resultados com o crop fixo
 
 ### Experimento 6
 
-resultados com o crop da região específica
+Como não obtivemos melhora na AUC, retornamos ao dados iniciais e, a partir da análise dos especialistas paramtrizamos os contornos da lesão. Realizamos então um recorte, mantendo somente a região dos nódulos. Mantivemos a quantidade de 8 slices e obtivemos os seguintes resultados:
+
+Como é possível observar no gráfico, a curva do trainig loss é reduzida durante as épocas, porém isto não ocorre nos dados de validação. O valor da acurácia não chega a 0.6.
+
+Mesmo realizando o corte é possível identificar um overfitting, pois a rede aprendeu somente a identificar os dados do treino e não foi possível generalizar.
+
+Alteramos os parâmetros learning_rate de 1e-4 1e-8 e aumentamos o numero de épocas para 200, contudo a curva loss, continuou subindo e não houve melhoras na acurácia.
 
 # Discussão
 
