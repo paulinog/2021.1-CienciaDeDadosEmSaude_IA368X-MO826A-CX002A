@@ -301,7 +301,7 @@ Ferramenta | Função
 
 No primeiro experimento investigamos se é possível identificar a probabilidade da presença de mVI olhando para a média, o valor máximo ou mínimo entre um fragmento dos dados. Os valores de AUC na validação tanto para a média quanto para o máximo foram semelhantes, cerca de 42%. Conjecturamos que essa característica decorre da perda de informações discriminativas das lesões. Isso é, quanto maior era a quantidade de slices em um voxel, mais frames eram combinados. Diminuindo a importância individual das amostras.
 
-Já o valor mínimo gerou uma melhora de 10% na AUC na validação, com relação ao anterior. Embora o mesmo problema da perda de informações discriminativas ocorra aqui também, usando o valor mínimo entre um subconjunto de slices aumentou a capacidade de identificação das micro-invasão. Podemos explicar essa melhora, pois, em geral, as lesões contêm valores baixos de intensidade. Sendo assim, ao considerarmos a região com mais baixa intensidade, conseguimos identificar automaticamente a lesão. E como vimos anteriormente, a mVI pode estar localizada na lesão, ou tangenciando ela. A AUC durante o treinamento para o mínimo chegou a 70%. A diferença entre os valores de teste e treinamento sugere que a rede de especificou aos dados de treino. Para lidar com isso, usamos regularização nas camadas de convolução, entretanto, não conseguimos angariar uma melhora significativa.significativa.
+Já o valor mínimo gerou uma melhora de 10% na AUC na validação, com relação ao anterior. Embora o mesmo problema da perda de informações discriminativas ocorra aqui também, usando o valor mínimo entre um subconjunto de slices aumentou a capacidade de identificação das micro-invasão. Podemos explicar essa melhora, pois, em geral, as lesões contêm valores baixos de intensidade. Sendo assim, ao considerarmos a região com mais baixa intensidade, conseguimos identificar automaticamente a lesão. E como vimos anteriormente, a mVI pode estar localizada na lesão, ou tangenciando ela. A AUC durante o treinamento para o mínimo chegou a 70%. A diferença entre os valores de teste e treinamento sugere que a rede de especificou aos dados de treino. Para lidar com isso, usamos regularização nas camadas de convolução, entretanto, não conseguimos angariar uma melhora significativa.
 
 
 ### Experimento 2
@@ -312,9 +312,19 @@ Antes mesmo de testarmos essa abordagem já sabíamos haver uma grande probabili
 
 ### Experimento 3
 
+Considerando os resultados de baixa qualidade, consideramos realizar a inferência usando não mais a rotulação por paciente, mas sim por slice. Para isso, manualmente anotamos quais amostras continham o nódulo. Verificamos que quanto maior o tamanho da lesão, mas slices contêm tal informação. Como mencionado na seção de análises realizadas, tivemos que fixar um tamanho máximo para a profundidade do voxel. Baseado em trabalhos anteriores, fixamos esse valor em 8 frames. Assim, para cada paciente, consideramos 8 frames a partir do primeiro que mostra uma lesão hepática.
 
+<p float="center">
+  <img src="/assets/ex3_resultados.png" />
+</p>
+
+Com essa abordagem conseguimos reduzir significativamente a taxa de falso negativo, como mostra o gráfico de recall na imagem acima. Porém, o algoritmo ainda erra mais de 50% dos casos positivos, como descrito no gráfico da precisão.
+
+Tentamos reduzir o erro adicionando regularização nas camadas, porém não conseguimos um bom balanço entre a precisão e a revocação.
 
 ### Experimento 4
+
+
 
 Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesão.
 
