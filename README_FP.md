@@ -1,7 +1,7 @@
 
-# Predição de Invasão Microvascular do Carcinoma Hepatocelular Pré- Ressecção ou Transplante Hepático Utilizando-se Dados Clínico-Laboratoriais e de Tomografia Computadorizada Trifásica
+# É POSSÍVEL PREDIZER INVASÃO MICROVASCULAR DO CARCINOMA HEPATOCELULAR PRÉ- RESSECÇÃO / TRANSPLANTE HEPÁTICO UTILIZANDO-SE DADOS CLÍNICO-LABORATORIAIS E DE TOMOGRAFIA COMPUTADORIZADA TRIFÁSICA? 
 
-# Project `<Title in English>`
+# Project `IS IT POSSIBLE TO PREDICT MICROVASCULAR INVASION OF HEPATOCELULAR CARCINOMA FROM PRE-RESECTION / LIVER TRANSPLANTATION USING CLINICAL-LABORATORY AND THREE-PHASE COMPUTERIZED TOMOGRAPHY DATA?`
 
 # Apresentação
 
@@ -25,9 +25,9 @@ A IMV foi descrita como o mais forte preditor independente de sobrevida livre de
 
 No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios (14-16). Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos à ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. 
 
-A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
+A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. Este estudo pode vir a fornecer uma contribuição para aprimorar escolhas terapêuticas e desfecho dos pacientes aos cuidados do grupo de transplante hepático.
 
-Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicados como método competitivo para identificação de tais invasões. Mostramos uma análise inicial onde pudemos notar alguns desafios que ainda precisam ser superados pela comunidade científica. Porém, os achados sugerem que usando redes profundas e dados volumétricos, existem prospecções para o desenvolvimento de um processo de identificação automatizado.
+Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicadas como método competitivo para identificação de tais invasões. Mostramos uma análise inicial onde pudemos notar alguns desafios que ainda precisam ser superados pela comunidade científica. Porém, os achados sugerem que usando redes profundas e dados volumétricos, existem prospecções para o desenvolvimento de um processo de identificação automatizado.
 
 
 
@@ -41,19 +41,20 @@ Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicados 
 
 # Slides do Projeto
 
-## Slides da Proposta
+## Slides da Proposta E1
 > Link para slides de apresentação da proposta do projeto.
 
 ## Slides da Apresentação Final
-> Link para slides da apresentação final do projeto.
+> https://docs.google.com/presentation/d/1Naxsml8uKxi6Z2HxJXhB1EfjpgsjbG1Wl5Bhsob8mW8/edit?usp=sharing
+
 
 # Introdução e Referenciais de Teóricos
 
 ## Contextualização do projeto
 
-> Indicação (bastante resumida) da análise proposta
->
-> Indicação (bastante resumida) dos resultados alcançados
+A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. Este estudo pode vir a fornecer uma contribuição para aprimorar escolhas terapêuticas e desfecho dos pacientes aos cuidados do grupo de transplante hepático.
+
+Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicadas como método competitivo para identificação de tais invasões. Mostramos uma análise inicial onde pudemos notar alguns desafios que ainda precisam ser superados pela comunidade científica. Porém, os achados sugerem que usando redes profundas e dados volumétricos, existem prospecções para o desenvolvimento de um processo de identificação automatizado.
 
 ## Trabalhos Relacionados
 
@@ -74,11 +75,11 @@ Apesar de todos esses métodos apresentarem resultados competitivos, todos são 
 
 # Objetivos do Projeto
 
-O principal objetivo do presente trabalho, é verificar se é possível identificar a presença de invasões microvasculares em imagens de ressonância magnética do fígado. Para isso, exploramos técnicas de análise de imagens que se baseiam em arquiteturas de redes neurais convolucionais. 
+O principal objetivo do presente trabalho, é verificar se é possível identificar a presença de invasões microvasculares em exames de tomografias computadorizadas de abdômem. Para isso, exploramos técnicas de análise de imagens que se baseiam em arquiteturas de redes neurais convolucionais. 
 
 # Metodologia
 
-Para lidar com o desafio da identificação da presença de mVI, consideramos duas frentes de pesquisa. Na primeira, buscamos compreender se dado com conjunto de imagens volumétricas, não isotrópicas, de diferentes fases, era possível verificar a presença de mVI. Na segunda frente, exploramos meios para melhorar a identificação através da determinação prévia de regiões de interesse.
+Para lidar com o desafio da identificação da presença de mVI, consideramos duas frentes de pesquisa. Na primeira, buscamos compreender se dado um conjunto de imagens volumétricas, não isotrópicas, de diferentes fases, era possível verificar a presença de mVI. Na segunda frente, exploramos meios para melhorar a identificação através da determinação prévia de regiões de interesse.
 
 ---
 
@@ -92,9 +93,9 @@ Em seguida, a rede transforma os volumes resultantes em sinais unidimensionais p
 
 Por fim, o vetor gerado é passado por três camadas totalmente conectadas até chegar a camada de decisão final. Intercalamos nessas camadas operações de dropout 30% para evitar a especialização dos dados durante o treinamento.
 
-Esse consórcio de convoluções foi construído baseado na visão dos especialistas que afirmam que a micro invasão pode ser melhor encontrada quando todas as fases são consideradas no processo de tomada de decisão. Vale lembrar que para o ser humano, não é possível identificar uma micro invasão olhando para dados de ressonância.
+Esse consórcio de convoluções foi construído baseado na visão dos especialistas que afirmam que a microinvasão pode ser melhor encontrada quando todas as fases são consideradas na análise conjunta no processo de tomada de decisão. Vale lembrar que para o ser humano não é possível identificar uma microinvasão, na atualidade, olhando apenas para dados de tomografia computadorizada.
 
-A imagem abaixo mostra a arquitetura desenvolvimento para o estudo desse projeto.
+A imagem abaixo mostra a arquitetura desenvolvida para o estudo desse projeto.
 
 
 <p float="left">
@@ -242,7 +243,7 @@ O relatório completo gerado para cada uma das features presentes nesse conjunto
 
 ase de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
-Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com lesões hepatocelulares.
+Imagens de TC | Domínio privado | Essa base de dados é composta por imagens de tomografia computadorizada de pacientes com carcinomas hepatocelulares (CHC).
 
 Além dos dados tabulares com informações diversas dos paciente e exames clínico- laboratoriais realizados, investigamos algumas características relacionadas a dados de imagens de tomografia computadorizada. Notamos que nas três fases que iremos explorar, existe uma disparidade com relação a quantidade de frames por exame. 
 
@@ -263,9 +264,9 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 
 # Análises Realizadas
 
-Como supramencionado, iniciamos a investigação baseando-se na classificação por paciente, ou seja, dado um conjunto de MRI de 3 fases distintas, e a informação se o paciente possui ou não a micro-invasão, criamos uma rede convolucional tridimensional, e passamos os slices através da arquitetura. Ocorre que, a quantidade de slices varia não somente entre pacientes, mas também entre fases. Das imagens volumétricas analisadas, o maior voxel contém 441 slices, enquanto o menor possue 58 slices. Com isso nos deparamos com o primeiro desafio da tarefa, responder como organizar os dados de modo que se encaixem na rede convolucional, visto que requerem amostras de tamanho fixo.
+Como supramencionado, iniciamos a investigação baseando-se na classificação por paciente, ou seja, dado um conjunto de TC de 3 fases distintas, e a informação se o paciente possui ou não a microinvasão, criamos uma rede convolucional tridimensional, e passamos os slices através da arquitetura. Ocorre que, a quantidade de slices varia não somente entre pacientes, mas também entre fases. Das imagens volumétricas analisadas, o maior voxel contém 441 slices, enquanto o menor possue 58 slices. Com isso nos deparamos com o primeiro desafio da tarefa, responder como organizar os dados de modo que se encaixem na rede convolucional, visto que requerem amostras de tamanho fixo.
 
-Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido levando em consideração os achados na literatura e a quantidade de memória que tinhamos disponível. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo. Assim, o volume de entrada para essa abordagem tem dimensões iguais a 128 x 128 x 64 px. As dimensões de altura e largura da imagem foram definidas com base nos valores adotados pelos trabalhos base desse projeto (Vide seção de trabalhos relacionados).
+Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido levando em consideração os achados na literatura e a quantidade de memória que tinhamos disponível. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedaços três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo. Assim, o volume de entrada para essa abordagem tem dimensões iguais a 128 x 128 x 64 px. As dimensões de altura e largura da imagem foram definidas com base nos valores adotados pelos trabalhos base desse projeto (Vide seção de trabalhos relacionados).
 
 ~~~python
 def get_chuncks(slices, n_chuncks):
@@ -278,29 +279,29 @@ def get_chuncks(slices, n_chuncks):
 
 Para pré-processar estes dados, foram necessárias aproximadamente 2 horas para cada fase. 
 
-Entretanto, o principal problema dessa abordagem é a perda da precisão com relação aos frames individuais. Nem todos os slices da ressonância contém informações que conduzem a identificação da presença da invasão. Pelo contrário, parte significativa dos slices nem sequer mostram a lesão.
+Entretanto, o principal problema dessa abordagem é a perda da precisão com relação aos frames individuais. Nem todos os slices da TC contém informações que conduzem a identificação da presença da invasão. Pelo contrário, parte significativa dos slices nem sequer mostram a lesão.
 
 Para superar essa limitação, resolvemos olhar individualmente para cada um dos frames, mas agora, através de uma rede convolucional de 2 dimensões. Nesse caso, ainda estamos usando como alvo a anotação sobre o paciente com a existência da mVI.
 
-Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que as imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a micro invasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
+Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que as imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a microinvasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
 
-Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção às regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs. Aqui, nos deparamos com um desafio similar ao citato anteriormente. A quantidade de frames com lesão depende de diversos fatores, sendo o principal deles o tamanho do carcinoma. Nessa linha, quanto maior a lesão, maior é a quantidade de frames observados. 
+Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção às regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs. Aqui, nos deparamos com um desafio similar ao citado anteriormente. A quantidade de frames com lesão depende de diversos fatores, sendo o principal deles o tamanho do carcinoma. Nessa linha, quanto maior a lesão, maior é a quantidade de frames observados. 
 
 Com isso, caímos no mesmo dilema, sobre como tratar esses dados com dimensões não fixas. Então, com base no estudo feito por Song et al. (20), consideramos 8 frames a partir da primeira ocorrência da lesão. Dessa forma, o volume final contém 128 x 128 x 8 px.
 
 Para cada uma das topologias propostas, experimentamos diversos hiper parâmetros, desde regularização, taxa de dropout para evitar overffiting, normalização de batch, otimizadores, inicializadores e quantidade de camadas internas, dentre outros. Como descrito na tabela abaixo:
 
-| Hiperparametros | Valores testados |
+| Hiperparâmetros | Valores testados |
 |-|-|
-| Fun. ativaçao interna | [softmax, sigmoid, tanh, relu] |
-| Fun. ativaçao saida | [softmax, sigmoid, tanh, relu] |
+| Fun. ativação interna | [softmax, sigmoid, tanh, relu] |
+| Fun. ativação saída | [softmax, sigmoid, tanh, relu] |
 | Inicializador | [zeros, RandomNormal, glorot_uniform] |
 | Qtd camadas conv. | [Adam, Adagrad, RMSprop, SDG] |
 | Qtd camadas full. | 1 ou mais |
-| Regularizaçao | [1e-5, 1e-2, 1e-1, 1, 1.5] |
+| Regularização | [1e-5, 1e-2, 1e-1, 1, 1.5] |
 
 
-As redes tridimensionais contêm muitos parâmetros, por isso, o computo da arquitetura é naturalmente demorada. Além disso, devido à alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
+As redes tridimensionais contêm muitos parâmetros, por isso, o cômputo da arquitetura é naturalmente demorada. Além disso, devido à alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
 
 ## Ferramentas
 
@@ -313,14 +314,15 @@ Ferramenta | Função
 [Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
 [pydicom](https://pydicom.github.io/) | Biblioteca específica para manipulação de imagens médicas em formato dcm.
 [Colab](https://pydicom.github.io/) | Ambiente de desenvolvimento com acesso a uma quantidade limitada, mas gratuida, de GPU.
+[RadiantDicomViewer](https://www.radiantviewer.com/) | Visualizador de imagens no formato .dcm (DICOM)
 
 # Resultados
 
 ### Experimento 1
 
-No primeiro experimento investigamos se é possível identificar a probabilidade da presença de mVI olhando para a média, o valor máximo ou mínimo entre um fragmento dos dados. Os valores de AUC na validação tanto para a média quanto para o máximo foram semelhantes, cerca de 42%. Conjecturamos que essa característica decorre da perda de informações discriminativas das lesões. Isso é, quanto maior era a quantidade de slices em um voxel, mais frames eram combinados. Diminuindo a importância individual das amostras.
+No primeiro experimento investigamos se é possível identificar a probabilidade da presença de mVI olhando para a média, o valor máximo ou mínimo entre um fragmento dos dados. Os valores de AUC na validação tanto para a média quanto para o máximo foram semelhantes, cerca de 42%. Conjecturamos que essa característica decorre da perda de informações discriminativas das lesões. Isso é, quanto maior era a quantidade de slices em um voxel, mais frames eram combinados, diminuindo a importância individual das amostras.
 
-Já o valor mínimo gerou uma melhora de 10% na AUC na validação, com relação ao anterior. Embora o mesmo problema da perda de informações discriminativas ocorra aqui também, usando o valor mínimo entre um subconjunto de slices aumentou a capacidade de identificação das micro-invasão. Podemos explicar essa melhora, pois, em geral, as lesões contêm valores baixos de intensidade. Sendo assim, ao considerarmos a região com mais baixa intensidade, conseguimos identificar automaticamente a lesão. E como vimos anteriormente, a mVI pode estar localizada na lesão, ou tangenciando ela. A AUC durante o treinamento para o mínimo chegou a 70%. A diferença entre os valores de teste e treinamento sugere que a rede de especificou aos dados de treino. Para lidar com isso, usamos regularização nas camadas de convolução, entretanto, não conseguimos angariar uma melhora significativa.
+Já o valor mínimo gerou uma melhora de 10% na AUC na validação, com relação ao anterior. Embora o mesmo problema da perda de informações discriminativas ocorra aqui também, usando o valor mínimo entre um subconjunto de slices aumentou a capacidade de identificação das microinvasão. Podemos explicar essa melhora, pois, em geral, as lesões contêm valores baixos de intensidade. Sendo assim, ao considerarmos a região com mais baixa intensidade, conseguimos identificar automaticamente a lesão. E como vimos anteriormente, a mVI pode estar localizada na lesão, ou adjacente a ela. A AUC durante o treinamento para o mínimo chegou a 70%. A diferença entre os valores de teste e treinamento sugere que a rede se especificou aos dados de treino. Para lidar com isso, usamos regularização nas camadas de convolução, entretanto, não conseguimos angariar uma melhora significativa.
 
 
 ### Experimento 2
@@ -331,21 +333,21 @@ Antes mesmo de testarmos essa abordagem já sabíamos haver uma grande probabili
 
 ### Experimento 3
 
-Considerando os resultados de baixa qualidade, consideramos realizar a inferência usando não mais a rotulação por paciente, mas sim por slice. Para isso, manualmente anotamos quais amostras continham o nódulo. Verificamos que quanto maior o tamanho da lesão, mas slices contêm tal informação. Como mencionado na seção de análises realizadas, tivemos que fixar um tamanho máximo para a profundidade do voxel. Baseado em trabalhos anteriores, fixamos esse valor em 8 frames. Assim, para cada paciente, consideramos 8 frames a partir do primeiro que mostra uma lesão hepática.
+Considerando os resultados de baixa qualidade, consideramos realizar a inferência usando não mais a rotulação por paciente, mas sim por nódulo. Para isso, manualmente anotamos quais amostras continham o nódulo. Verificamos que quanto maior o tamanho da lesão, mas slices contêm tal informação. Como mencionado na seção de análises realizadas, tivemos que fixar um tamanho máximo para a profundidade do voxel. Baseado em trabalhos anteriores, fixamos esse valor em 8 frames. Assim, para cada paciente, consideramos 8 frames a partir do primeiro que mostra uma lesão hepática.
 
 <p float="center">
   <img src="/assets/ex3_resultados.png" />
 </p>
 
-Com essa abordagem conseguimos reduzir significativamente a taxa de falso negativo, como mostra o gráfico de recall na imagem acima. Porém, o algoritmo ainda erra mais de 50% dos casos positivos, como descrito no gráfico da precisão.
+Com essa abordagem conseguimos reduzir significativamente a taxa de falso negativo, como mostra o gráfico de recall na imagem acima. Porém, o algoritmo ainda erra mais de 50% dos casos positivos, como descrito no gráfico da precisão, aumentando a taxa falso positivo.
 
 Tentamos reduzir o erro adicionando regularização nas camadas, porém não conseguimos um bom balanço entre a precisão e a revocação.
 
 ### Experimento 4
 
-Em seguida, considerando os 8 slices a partir da primeira ocorrência da lesão, testamos novamente a rede 2D. Na tabela abaixo, mostramos os resultados angariados em cada conjunto. Os valores do teste foram computados usando a melhor configuração dos parâmetros explorados. Notem que as métricas de avaliação do conjunto de teste foram substancialmente maiores e melhores que as do conjunto de validação. Sugerindo que existe alguma característica no conjunto de validação de dificulta a identificação das invasões microvasculares.
+Em seguida, considerando os 8 slices a partir da primeira ocorrência da lesão, testamos novamente a rede 2D. Na tabela abaixo, mostramos os resultados angariados em cada conjunto. Os valores do teste foram computados usando a melhor configuração dos parâmetros explorados. Notem que as métricas de avaliação do conjunto de teste foram substancialmente maiores e melhores que as do conjunto de validação. Sugerindo que existe alguma característica no conjunto de validação que dificulta a identificação das invasões microvasculares.
 
-Buscamos compreender se o tamanho da lesão estava influenciando nos resultados da classificação, entrementes, não encontramos nenhum padrão entre o tamanho as amostras e as taxas de falso positivo e negativo. 
+Buscamos compreender se o tamanho da lesão estava influenciando nos resultados da classificação, entrementes, não encontramos nenhum padrão entre o tamanho das amostras e as taxas de falso positivo e negativo. 
 
 |Conjunto | Loss | Acc | Prec | Recall | AUC|
 |-|-|-|-|-|-|
@@ -367,14 +369,14 @@ Mesmo na tentativa de diminuir as informações de ruído e manter somente a reg
 
 ### Experimento 6
 
-Como não obtivemos melhora na AUC, retornamos ao dados iniciais e, a partir da análise dos especialistas paramtrizamos os contornos da lesão. Realizamos então um recorte, mantendo somente a região dos nódulos. Mantivemos a quantidade de 8 slices e obtivemos os seguintes resultados:
+Como não obtivemos melhora na AUC, retornamos ao dados iniciais e, a partir da análise dos especialistas parametrizamos os contornos da lesão. Realizamos então um recorte, mantendo somente a região dos nódulos. Mantivemos a quantidade de 8 slices e obtivemos os seguintes resultados:
 
 <p float="center">
   <img src="/assets/ex6_1_resultados.png" />
 </p>
 
-Como é possível observar no gráfico, a curva do trainig loss é reduzida durante as épocas, porém isto não ocorre nos dados de validação. O valor da acurácia não chega a 0.6.
-Mesmo realizando o corte é possível identificar um overfitting, pois a rede conseguiu identificar somente os dados do treino e não foi possível generalizar.
+Como é possível observar, na etapa de treinamento a taxa loss é reduzida durante as épocas, porém isto não ocorre nos dados de validação. O valor de AUC não chega a 0.6.
+Mesmo realizando o corte é possível identificar um overfitting, pois a rede conseguiu identificar somente os dados do treino e não foi possível generalizar para os dados de validação.
 
 Alteramos os parâmetros learning_rate de 1e-4 1e-8 e aumentamos o numero de épocas para 200, contudo a curva loss, continuou subindo e não houve melhoras na acurácia, conforme abaixo:
 
@@ -385,33 +387,35 @@ Alteramos os parâmetros learning_rate de 1e-4 1e-8 e aumentamos o numero de ép
 
 # Discussão
 
-Nesse projeto, pudemos entender que trabalhar com imagens médicas volumétricas de exames de ressonância magnética, impõe desafios significativos, especialmente considerando a complexidade do problema abordado.
+Nesse projeto, pudemos entender que trabalhar com imagens médicas volumétricas de exames de TC, impõe desafios significativos, especialmente considerando a complexidade do problema abordado.
 
-Como visto na seção de experimentos, não conseguimos alcançar resultados satisfatórios no conjunto de validação. Contudo, no treinamento, a rede foi capaz de identificar a presença das invasões de forma promissora. Essa característica sugere que o modelo se especializou nos dados de treino. Todavia, no fim do _grid search_, quando testamos no conjunto de teste, verificamos que o modelo foi capaz de classificar corretamente as amostras com grau promissor de certeza, amostras essas que nunca tinham viso vistas pelo classificador. Dessa forma, buscamos encontrar alguma ligação entre as imagens e os resultados que justificassem tal comportamento, porém não identificamos nada. 
+Como visto na seção de experimentos, não conseguimos alcançar resultados satisfatórios no conjunto de validação. Contudo, no treinamento, a rede foi capaz de identificar a presença das invasões de forma promissora. Essa característica sugere que o modelo se especializou nos dados de treino. Todavia, no fim do _grid search_, quando testamos no conjunto de teste, verificamos que o modelo foi capaz de classificar corretamente as amostras com grau promissor de certeza, amostras essas que nunca tinham sido vistas pelo classificador. Dessa forma, buscamos encontrar alguma ligação entre as imagens e os resultados que justificassem tal comportamento, porém ainda não conseguimos elucidar completamente esta questão. 
 
-Em trabalhos futuros, iremos adicionar no topo da rede uma camada chamada CancelOut(CO) para verificar quais são regiões da imagem ou volume e mais contribuem para a inferência. Essa camada é similar a camada fully-connected (FC), exceto porque os neurônios da FC se conectam com todas as entradas, enquanto os neurônios da CO tem apenas uma conexão com uma entrada em particular. A intuição primordial por trás dessa técnica consiste em ponderar as entradas durante o treinamento de tal forma que características irrelevantes são canceladas comum peso negativo, ao passo que as que contribuem mais no processo de aprendizagem são positivamente ponderadas.
+Em trabalhos futuros, iremos adicionar no topo da rede uma camada chamada CancelOut(CO) para verificar quais são regiões da imagem ou volume que mais contribuem para a inferência. Essa camada é similar a camada fully-connected (FC), exceto porque os neurônios da FC se conectam com todas as entradas, enquanto os neurônios da CO tem apenas uma conexão com uma entrada em particular. A intuição primordial por trás dessa técnica consiste em ponderar as entradas durante o treinamento de tal forma que características irrelevantes são canceladas com um peso negativo, ao passo que as que contribuem mais no processo de aprendizagem são positivamente ponderadas.
 
-Apesar dos baixos resultados, podemos concluir que não é possível identificar uma invasão microvascular olhando para o voxel do paciente, sem antes fazer um filtragem dos slices que, pelo mesmo, descrevem a região do fígado.
+Identificamos que alguns nódulos não são delimitados em toda sua extensão, notadamente os maiores, pois utilizamos somente 8 slices na etapa de pré processamento das entradas. Em trabalhos futuros, poderemos aumentar a quantidade de slices e verificar se ocorre melhoras nos resultados.
+
+Apesar dos baixos resultados, podemos concluir que não é possível identificar uma invasão microvascular olhando para o voxel com todo o exame de TC do abdômem do paciente, sem antes fazer um filtragem dos slices que, pelo menos, descrevam a região do fígado.
 
 Ademais, a detecção da invasão é mais promissora quando olhamos para cada slice, e não para todo o voxel. Isso não parece lógico, dado que certas informações discriminativas são vistas apenas quando olhamos para as três dimensões. Porém, acreditamos que a limitação esteja correlacionada a adequação da rede. Talvez teríamos que aumentar a profundidade das camadas internas, visto que dessa forma, traços finos das classes são salientados, como reportados em vários trabalhos de visão computacional. Contudo, isso requer uma grande capacidade computacional, a qual não dispomos no momento.
 
-Olhar apenas para a lesão mais cerca de 1 centímetro dela não proporciona melhora no processo de inferência. Conjecturamos que essa característica se dá ao fato de uma região maior da periferia da lesão não ser considerada. Reduzindo a margem para identificação da lesão.
+Olhando apenas para a lesão e suas adjacências (cerca de 1 centímetro ao redor) não proporcionou melhora no processo de inferência. Conjecturamos que este resultado possa estar relcaionado ao fato de uma região maior da periferia da lesão não ser considerada, reduzindo a margem para identificação da invasão microvascular. Em trabalhos futuros, aproveitando a delimitação já realizada poderemos alterar o tamanho considerado. 
 
 
 # Conclusão
 
 Desenvolvemos e exploramos métodos para identificação de invasão microvascular em lesões no fígado. Verificamos que esse não é um problema fácil de se resolver, visto que existem diversas limitações que podem prejudicar o processo de tomada de decisão.
 
-Em suma, não é possível identificar invasões olhando apenas para a região da lesão, como já havia sido documentado na literatura, a periferia do carcinoma é peça fundamental para a detecção.
+Em suma, não foi possível identificar invasões olhando apenas para a região da lesão, como já havia sido documentado em parte na literatura, a periferia do carcinoma é peça fundamental para a detecção.
 
-As redes neurais convolucionais 3D, apesar de serem ferramentas poderosas, elas exitem um auto poder computacional para que o modelo se adéque aos dados e possa com precisão e sensibilidade classificar os voxels.
+As redes neurais convolucionais 3D, apesar de serem ferramentas poderosas, exigem alto poder computacional para que o modelo se adéque aos dados e possa, com precisão e sensibilidade, classificar os voxels.
 
-As redes 2D são uma alternativa para superar tal impasse, no entanto, isso exigirá um esforço coletivo junto a especialistas da área para identificar os slices que descrevem uma lesão, - processo esse que pode ser automatizado, com outro classificador, mas de lesões.
+As redes 2D são uma alternativa para superar tal impasse, no entanto, isso exigirá um esforço coletivo junto a especialistas da área para identificar os slices que descrevem uma lesão, - processo esse que pode ser automatizado, com outro classificador, exclusivo para as lesões.
 
 
 # Trabalhos Futuros
 
-Em trabalhos futuros, iremos explorar meios para refinar o processo de tomada de decisão, usando técnicas de explicabilidade e segmentação automatica por saliência.
+Em trabalhos futuros, iremos explorar meios para refinar o processo de tomada de decisão, usando técnicas de explicabilidade e segmentação automática por saliência.
 
 # Referências Bibliográficas
 
