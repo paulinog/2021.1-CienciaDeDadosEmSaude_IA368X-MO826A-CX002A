@@ -294,6 +294,7 @@ Ferramenta | Função
 [Numpy](https://numpy.org/) | Biblioteca utilizada para manipulação de vetores multidimensionais.
 [Matplotlib](https://matplotlib.org/) | Biblioteca para visualização dos dados.
 [pydicom](https://pydicom.github.io/) | Biblioteca específica para manipulação de imagens médicas em formato dcm.
+[Colab](https://pydicom.github.io/) | Ambiente de desenvolvimento com acesso a uma quantidade limitada, mas gratuida, de GPU.
 
 # Resultados
 
@@ -343,9 +344,19 @@ resultados com o crop fixo
 resultados com o crop da região específica
 
 # Discussão
-> Discussão dos resultados. Relacionar os resultados com as perguntas de pesquisa ou hipóteses avaliadas.
->
-> A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
+
+Nesse projeto, pudemos entender que trabalhar com imagens médicas volumétricas de exames de ressonância magnética, impõe desafios significativos, especialmente considerando a complexidade do problema abordado.
+
+Como visto na seção de experimentos, não conseguimos alcançar resultados satisfatórios no conjunto de validação. Contudo, no treinamento, a rede foi capaz de identificar a presença das invasões de forma promissora. Essa característica sugere que o modelo se especializou nos dados de treino. Todavia, no fim do _grid search_, quando testamos no conjunto de teste, verificamos que o modelo foi capaz de classificar corretamente as amostras com grau promissor de certeza, amostras essas que nunca tinham viso vistas pelo classificador. Dessa forma, buscamos encontrar alguma ligação entre as imagens e os resultados que justificassem tal comportamento, porém não identificamos nada. 
+
+Em trabalhos futuros, iremos adicionar no topo da rede uma camada chamada CancelOut(CO) para verificar quais são regiões da imagem ou volume e mais contribuem para a inferência. Essa camada é similar a camada fully-connected (FC), exceto porque os neurônios da FC se conectam com todas as entradas, enquanto os neurônios da CO tem apenas uma conexão com uma entrada em particular. A intuição primordial por trás dessa técnica consiste em ponderar as entradas durante o treinamento de tal forma que características irrelevantes são canceladas comum peso negativo, ao passo que as que contribuem mais no processo de aprendizagem são positivamente ponderadas.
+
+Apesar dos baixos resultados, podemos concluir que não é possível identificar uma invasão microvascular olhando para o voxel do paciente, sem antes fazer um filtragem dos slices que, pelo mesmo, descrevem a região do fígado.
+
+Ademais, a detecção da invasão é mais promissora quando olhamos para cada slice, e não para todo o voxel. Isso não parece lógico, dado que certas informações discriminativas são vistas apenas quando olhamos para as três dimensões. Porém, acreditamos que a limitação esteja correlacionada a adequação da rede. Talvez teríamos que aumentar a profundidade das camadas internas, visto que dessa forma, traços finos das classes são salientados, como reportados em vários trabalhos de visão computacional. Contudo, isso requer uma grande capacidade computacional, a qual não dispomos no momento.
+
+Olhar apenas para a lesão mais cerca de 1 centímetro dela não proporciona melhora no processo de inferência. Conjecturamos que essa característica se dá ao fato de uma região maior da periferia da lesão não ser considerada. Reduzindo a margem para identificação da lesão.
+
 
 # Conclusão
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
