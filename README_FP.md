@@ -259,8 +259,7 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 
 Como supramencionado, iniciamos a investigação baseando-se na classificação por paciente, ou seja, dado um conjunto de MRI de 3 fases distintas, e a informação se o paciente possui ou não a micro-invasão, criamos uma rede convolucional tridimensional, e passamos os slices através da arquitetura. Ocorre que, a quantidade de slices varia não somente entre pacientes, mas também entre fases. Das imagens volumétricas analisadas, o maior voxel contém 441 slices, enquanto o menor possue 58 slices. Com isso nos deparamos com o primeiro desafio da tarefa, responder como organizar os dados de modo que se encaixem na rede convolucional, visto que requerem amostras de tamanho fixo.
 
-Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo.
-
+Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo. Assim, o volume de entrada para essa abordagem tem dimensões iguais a 128 x 128 x 64 px. As dimensões de altura e largura da imagem foram definidas com base nos valores adotados pelos trabalhos base desse projeto (Vide seção de trabalhos relacionados).
 
 
 ~~~python
@@ -280,9 +279,21 @@ Para superar essa limitação, resolvemos olhar individualmente para cada um dos
 
 Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a micro invasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
 
-Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção a regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs.
+Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção a regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs. Aqui, nos deparamos com um desafio similar ao citato anteriormente. A quantidade de frames que podem ser identificadas a lesão depende de diversos fatores, sendo o principal deles o tamanho do carcinoma. Nessa linha, quanto maior a lesão, maior é a quantidade de frames observados. 
 
-Para cada uma das topologias propostas, experimentamos diversos hiper parâmetros, desde regularização, taxa de dropout para evitar overffiting, normalização de batch, otimizadores, inicializadores e quantidade de camadas internas, dentre outros.
+Com isso caímos no mesmo dilema, sobre como tratar esses dados com dimensões não fixas. Então, com base no estudo feito por Song et al. (20), consideramos 8 frames a partir da primeira ocorrência da lesão. Dessa forma, o volume final contém 128 x 128 x 8 px.
+
+Para cada uma das topologias propostas, experimentamos diversos hiper parâmetros, desde regularização, taxa de dropout para evitar overffiting, normalização de batch, otimizadores, inicializadores e quantidade de camadas internas, dentre outros. Como descrito na tabela abaixo:
+
+| Hiperparametros | Valores testados |
+|-|-|
+| Fun. ativaçao interna | [softmax, sigmoid, tanh, relu] |
+| Fun. ativaçao saida | [softmax, sigmoid, tanh, relu] |
+| Inicializador | [zeros, RandomNormal, glorot_uniform] |
+| Qtd camadas conv. | [Adam, Adagrad, RMSprop, SDG] |
+| Qtd camadas full. | 1 ou mais |
+| Regularizaçao | [1e-5, 1e-2, 1e-1, 1, 1.5] |
+
 
 As redes tridimensionais contêm muitos parâmetros, por isso, o computo da arquitetura é naturalmente demorada. Além disso, devido a essa alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
 
@@ -300,6 +311,15 @@ Ferramenta | Função
 [pydicom](https://pydicom.github.io/) | Biblioteca específica para manipulação de imagens médicas em formato dcm.
 
 # Resultados
+
+Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesão.
+
+|Conjunto | Loss | Acc | Prec | Recall | AUC|
+|-|-|-|-|-|-|
+|Treinamento| 0.9241  | 0.6711  | 0.6711  | 0.6711  | 0.7242  | 
+|Validação | 6.4818| 0.4262| 0.4262| 0.4262| 0.3321| 
+|Test | 3.7914 | 0.6824 | 0.6824 | 0.6824 | 0.6968 | 
+
 > Descrição dos resultados mais importantes obtidos.
 >
 > Apresente os resultados da forma mais rica possível, com gráficos e tabelas. Mesmo que o seu código rode online em um notebook, copie para esta parte a figura estática. A referência a código e links para execução online pode ser feita aqui ou na seção de Análises Realizadas (o que for mais pertinente).
