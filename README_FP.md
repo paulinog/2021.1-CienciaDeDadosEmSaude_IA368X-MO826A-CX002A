@@ -243,24 +243,11 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 | max   | 348      | 489     | 349      |
 
 
-### Integração entre Bases e Análise Exploratória
-
-> Descreva etapas de integração de fontes de dados e apresente a seguir uma análise exploratória que envolva ambas.
->
->
->
-> Resultados de Análise Exploratória
-> * use estatística descritiva e gráficos;
-> * inclua gráficos de sobre a distribuição dos dados (e.g., histogramas e boxplots);
-> * analise correlação e use gráficos de dispersão;
-> * descreva os resultados/gráficos, os analise e contextualize com o tema definido.
-
 # Análises Realizadas
 
 Como supramencionado, iniciamos a investigação baseando-se na classificação por paciente, ou seja, dado um conjunto de MRI de 3 fases distintas, e a informação se o paciente possui ou não a micro-invasão, criamos uma rede convolucional tridimensional, e passamos os slices através da arquitetura. Ocorre que, a quantidade de slices varia não somente entre pacientes, mas também entre fases. Das imagens volumétricas analisadas, o maior voxel contém 441 slices, enquanto o menor possue 58 slices. Com isso nos deparamos com o primeiro desafio da tarefa, responder como organizar os dados de modo que se encaixem na rede convolucional, visto que requerem amostras de tamanho fixo.
 
-Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo. Assim, o volume de entrada para essa abordagem tem dimensões iguais a 128 x 128 x 64 px. As dimensões de altura e largura da imagem foram definidas com base nos valores adotados pelos trabalhos base desse projeto (Vide seção de trabalhos relacionados).
-
+Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido levando em consideração os achados na literatura e a quantidade de memória que tinhamos disponível. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo. Assim, o volume de entrada para essa abordagem tem dimensões iguais a 128 x 128 x 64 px. As dimensões de altura e largura da imagem foram definidas com base nos valores adotados pelos trabalhos base desse projeto (Vide seção de trabalhos relacionados).
 
 ~~~python
 def get_chuncks(slices, n_chuncks):
@@ -277,11 +264,11 @@ Entretanto, o principal problema dessa abordagem é a perda da precisão com rel
 
 Para superar essa limitação, resolvemos olhar individualmente para cada um dos frames, mas agora, através de uma rede convolucional de 2 dimensões. Nesse caso, ainda estamos usando como alvo a anotação sobre o paciente com a existência da mVI.
 
-Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a micro invasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
+Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que as imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a micro invasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
 
-Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção a regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs. Aqui, nos deparamos com um desafio similar ao citato anteriormente. A quantidade de frames que podem ser identificadas a lesão depende de diversos fatores, sendo o principal deles o tamanho do carcinoma. Nessa linha, quanto maior a lesão, maior é a quantidade de frames observados. 
+Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção às regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs. Aqui, nos deparamos com um desafio similar ao citato anteriormente. A quantidade de frames com lesão depende de diversos fatores, sendo o principal deles o tamanho do carcinoma. Nessa linha, quanto maior a lesão, maior é a quantidade de frames observados. 
 
-Com isso caímos no mesmo dilema, sobre como tratar esses dados com dimensões não fixas. Então, com base no estudo feito por Song et al. (20), consideramos 8 frames a partir da primeira ocorrência da lesão. Dessa forma, o volume final contém 128 x 128 x 8 px.
+Com isso, caímos no mesmo dilema, sobre como tratar esses dados com dimensões não fixas. Então, com base no estudo feito por Song et al. (20), consideramos 8 frames a partir da primeira ocorrência da lesão. Dessa forma, o volume final contém 128 x 128 x 8 px.
 
 Para cada uma das topologias propostas, experimentamos diversos hiper parâmetros, desde regularização, taxa de dropout para evitar overffiting, normalização de batch, otimizadores, inicializadores e quantidade de camadas internas, dentre outros. Como descrito na tabela abaixo:
 
@@ -295,9 +282,7 @@ Para cada uma das topologias propostas, experimentamos diversos hiper parâmetro
 | Regularizaçao | [1e-5, 1e-2, 1e-1, 1, 1.5] |
 
 
-As redes tridimensionais contêm muitos parâmetros, por isso, o computo da arquitetura é naturalmente demorada. Além disso, devido a essa alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
-
-
+As redes tridimensionais contêm muitos parâmetros, por isso, o computo da arquitetura é naturalmente demorada. Além disso, devido à alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
 
 ## Ferramentas
 
@@ -312,6 +297,25 @@ Ferramenta | Função
 
 # Resultados
 
+### Experimento 1
+
+No primeiro experimento investigamos se é possível identificar a probabilidade da presença de mVI olhando para a média, o valor máximo ou mínimo entre um fragmento dos dados. Os valores de AUC na validação tanto para a média quanto para o máximo foram semelhantes, cerca de 42%. Conjecturamos que essa característica decorre da perda de informações discriminativas das lesões. Isso é, quanto maior era a quantidade de slices em um voxel, mais frames eram combinados. Diminuindo a importância individual das amostras.
+
+Já o valor mínimo gerou uma melhora de 10% na AUC na validação, com relação ao anterior. Embora o mesmo problema da perda de informações discriminativas ocorra aqui também, usando o valor mínimo entre um subconjunto de slices aumentou a capacidade de identificação das micro-invasão. Podemos explicar essa melhora, pois, em geral, as lesões contêm valores baixos de intensidade. Sendo assim, ao considerarmos a região com mais baixa intensidade, conseguimos identificar automaticamente a lesão. E como vimos anteriormente, a mVI pode estar localizada na lesão, ou tangenciando ela. A AUC durante o treinamento para o mínimo chegou a 70%. A diferença entre os valores de teste e treinamento sugere que a rede de especificou aos dados de treino. Para lidar com isso, usamos regularização nas camadas de convolução, entretanto, não conseguimos angariar uma melhora significativa.significativa.
+
+
+### Experimento 2
+
+No segundo experimento, partimos para a exploração da rede convolucional 2D. A principal diferença dessa abordagem para a anterior, é que o label do voxel foi estendido para todas os slices, independentemente se o frame contém ou não informações do fígado. 
+
+Antes mesmo de testarmos essa abordagem já sabíamos haver uma grande probabilidade dos resultados serem baixos, visto que estamos adicionando muito ruído a rede dizendo que amostras que não retratam a lesão são tratadas como se tivessem. Os resultados da AUC para esse teste ficou abaixo de 20% na validação.
+
+### Experimento 3
+
+
+
+### Experimento 4
+
 Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesão.
 
 |Conjunto | Loss | Acc | Prec | Recall | AUC|
@@ -319,6 +323,8 @@ Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesã
 |Treinamento| 0.9241  | 0.6711  | 0.6711  | 0.6711  | 0.7242  | 
 |Validação | 6.4818| 0.4262| 0.4262| 0.4262| 0.3321| 
 |Test | 3.7914 | 0.6824 | 0.6824 | 0.6824 | 0.6968 | 
+
+### Experimento 5
 
 > Descrição dos resultados mais importantes obtidos.
 >
