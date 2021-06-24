@@ -355,7 +355,15 @@ Buscamos compreender se o tamanho da lesão estava influenciando nos resultados 
 
 ### Experimento 5
 
-resultados com o crop fixo
+Com o intuito de minimizar as informações que não eram pertinentes para a detecção da microinvasão, realizamos um corte fixo nas imagens com o objetivo de delimitar o figado. 
+Os resultados obtidos não foram superiores aos do experimento anterior, conforme abaixo:
+
+|Conjunto | Loss | Acc | Prec | Recall | AUC|
+|-|-|-|-|-|-|
+|Treinamento|  0.5586  | 0.6974 |0.6974 | 0.6974  |0.7904  | 
+|Validação | 1.1662 | 0.4000| 0.4000| 0.4000| 0.3376| 
+
+Mesmo na tentativa de diminuir as informações de ruído e manter somente a região de interesse, ainda tínhamos excesso de informação não relacionada a microinvasão. 
 
 ### Experimento 6
 
