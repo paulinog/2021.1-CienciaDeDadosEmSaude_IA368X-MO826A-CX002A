@@ -324,9 +324,9 @@ Tentamos reduzir o erro adicionando regularização nas camadas, porém não con
 
 ### Experimento 4
 
+Em seguida, considerando os 8 slices a partir da primeira ocorrência da lesão, testamos novamente a rede 2D. Na tabela abaixo, mostramos os resultados angariados em cada conjunto. Os valores do teste foi computado usando a melhor configuração dos parâmetros explorados. Notem que as métricas de avaliação do conjunto de teste foram substancialmente maiores e melhores que as do conjunto de validação. Sugerindo que existe alguma característica no conjunto de validação de dificulta a identificação das invasões microvasculares.
 
-
-Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesão.
+Buscamos compreender se o tamanho da lesão estava influenciando nos resultados da classificação, entrementes, não encontramos nenhum padrão entre o tamanho as amostras e as taxas de falso positivo e negativo. 
 
 |Conjunto | Loss | Acc | Prec | Recall | AUC|
 |-|-|-|-|-|-|
@@ -336,9 +336,11 @@ Resultados rede 2D com apenas 8 slices a partir da primeira ocorrência da lesã
 
 ### Experimento 5
 
-> Descrição dos resultados mais importantes obtidos.
->
-> Apresente os resultados da forma mais rica possível, com gráficos e tabelas. Mesmo que o seu código rode online em um notebook, copie para esta parte a figura estática. A referência a código e links para execução online pode ser feita aqui ou na seção de Análises Realizadas (o que for mais pertinente).
+resultados com o crop fixo
+
+### Experimento 6
+
+resultados com o crop da região específica
 
 # Discussão
 > Discussão dos resultados. Relacionar os resultados com as perguntas de pesquisa ou hipóteses avaliadas.
