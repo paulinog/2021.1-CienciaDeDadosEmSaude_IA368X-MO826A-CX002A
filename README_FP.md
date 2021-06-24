@@ -37,7 +37,7 @@ Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicadas 
 > https://drive.google.com/file/d/1RCdJ5aXSi8bzHtpRaHbQ-o3KIrWn5OPz/view?usp=sharing
 
 ## Vídeo da Apresentação Final
-> Link para vídeo da apresentação final do projeto (máximo 8 minutos). *TODOS OS MEMBROS DO GRUPO DEVEM APARECER NO VÍDEO*.
+> https://drive.google.com/drive/folders/14Mlw9QFfzOwsPpqocyMWwnapLWJprZOo?usp=sharing
 
 # Slides do Projeto
 
