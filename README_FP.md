@@ -48,7 +48,7 @@ No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção ci
 
 ## Trabalhos Relacionados
 
-Pesquisas recentes na área de detecção e predição de invasão microvascular, (mVI, do inglês, Microvascular invasion) em imagens de ressonância magnética (RM), têm se beneficiado do advanto dos algoritmos de aprendizagem de máquina, mais precisamente, das redes neurais artificiais. Nos últimos anos, essas redes tem mostrado um potencial competitivo para explorar a mais variada gama de dados, inclusive, de imagens médicas.
+Pesquisas recentes na área de detecção e predição de invasão microvascular, (mVI, do inglês, Microvascular invasion) em imagens de ressonância magnética (RM), têm se beneficiado do advento dos algoritmos de aprendizagem de máquina, mais precisamente, das redes neurais artificiais. Nos últimos anos, essas redes têm mostrado um potencial competitivo para explorar a mais variada gama de dados, inclusive, de imagens médicas.
 
 Zheng et al. (18) elaboraram um método para predição de mVI através de uma análise quantitativa das imagens de RM. Para isso, foram coletados inicialmente achados radiômicos graduados, como quantidade e diâmetro dos tumores, identificação de artérias internas do tumor e realce do rebardo periférico, dentro outros. Subsequentemente foram coletados dados de textura da periferia do tumor e do parênquima hepática adjacente. Depois, os dados foram aplicados a dois modelos multivariados. Os autores angariaram uma AUC = 88.00 usando dados de textura extraídos com o Local Binary Pattern (LBP) e dados clínicos do pré-operatório.
 
@@ -57,6 +57,7 @@ Nebbia et al. (19) propuseram a utilizaram de três tipos de características pa
 Song et al. (20) exploraram esse problema usando redes neurais profundas. Para isso, foi desenvolvida uma rede com oito entradas. Cada entrada processa um volume 3D de interesse (), com oito sequências da MRI. As entradas são processadas paralelamente, pela mesma topologia de rede, 4 camadas de convolução empilhadas. As saídas dessas convoluções são concatenadas junto a parâmetros clínicos e passadas para uma camada totalmente conectada com ativação softmax, que gera a probabilidade de haver ou não invasão. O arcabouço alcançou o valor de AUC equivalente a 93.33%. Superando os métodos anteriores que utilizavam informações radiômicas, meticulosamente extraídas por especialistas da área.
 
 Apesar de todos esses métodos apresentarem resultados competitivos, todos são dependentes de segmentação e identificação prévia da área de interesse. Nessa linha, objetivamos o desenvolvimento de um consórcio de algoritmos baseados em redes neurais profundas, que dado um volume 3D não isotrópico (e.g. tem dimensões distintas), sejamos capazes de determinar a probabilidade de um paciente conter ou não invasão microvascular.
+
 
 # Perguntas de Pesquisa
 
@@ -72,9 +73,13 @@ Para lidar com o desafio da identificação da presença de mVI, consideramos du
 
 ---
 
-Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissões são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nessa sentido, buscamos explorar meios mais robustos, capazes de extraír informações discriminativa dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
+Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissões são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nessa sentido, buscamos explorar meios mais robustos, capazes de extrair informações discriminativas dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
 
-O problema é descrito como: Seja $`V^P_i`$ um e
+
+
+<p float="left">
+  <img src="/assets/net_topology.png" width="500" />
+</p>
 
 > Abordagem adotada pelo projeto na busca pela resposta às perguntas de pesquisa.
 > Justificar teoricamente, sempre que possível, a metodologia adotada.
@@ -252,28 +257,36 @@ Na tabela abaixo mostramos as características gerais da base. É possível nota
 
 # Análises Realizadas
 
-<p float="left">
-  <img src="/assets/net_topology.png" width="500" />
-</p>
+Como supramencionado, iniciamos a investigação baseando-se na classificação por paciente, ou seja, dado um conjunto de MRI de 3 fases distintas, e a informação se o paciente possui ou não a micro-invasão, criamos uma rede convolucional tridimensional, e passamos os slices através da arquitetura. Ocorre que, a quantidade de slices varia não somente entre pacientes, mas também entre fases. Das imagens volumétricas analisadas, o maior voxel contém 441 slices, enquanto o menor possue 58 slices. Com isso nos deparamos com o primeiro desafio da tarefa, responder como organizar os dados de modo que se encaixem na rede convolucional, visto que requerem amostras de tamanho fixo.
 
-> Descrição detalhada das análises realizadas.
->
->
->
->Relate aqui também a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
->
->
->
-> Nesta seção ou na seção de Resultados podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
->
-> Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. Não utilize trechos extensos de código. Se algum código funcionar online (tal como um Jupyter Notebook), aqui pode haver links. No caso do Jupyter, preferencialmente para o Binder abrindo diretamente o notebook em questão.
+Como uma alternativa a esse impasse, determinamos uma quantia fixa de slices, no caso, 64 slices - esse número foi empiricamente definido. Em seguida, dividimos o voxel em pedaços igualmente espaçados para conseguir a quantidade de slices requerida (como descrito no trecho de código abaixo). E então, experimentamos atribuir a estes pedados três valores, que correspondem ao valor médio dos slices nos conjuntos menores, ao valor máximo do pedaço ou ao valor mínimo.
+
+
 
 ~~~python
-df = pd.read_excel("/content/drive/My Drive/Colab Notebooks/dataset.xlsx");
-sns.set(color_codes=True);
-sns.distplot(df.Hemoglobin);
-plt.show();
+def get_chuncks(slices, n_chuncks):
+
+  n_chuncks = math.ceil(len(slices) / n_chuncks)
+
+  for i in range(0, len(slices), n_chuncks):
+    yield slices[i:i+n_chuncks]
 ~~~
+
+Para pré-processar estes dados, foram necessárias aproximadamente 2 horas para cada fase. 
+
+Entretanto, o principal problema dessa abordagem é a perda da precisão com relação aos frames individuais. Nem todos os slices da ressonância contém informações que conduzem a identificação da presença da invasão. Pelo contrário, parte significativa dos slices nem sequer mostram a lesão.
+
+Para superar essa limitação, resolvemos olhar individualmente para cada um dos frames, mas agora, através de uma rede convolucional de 2 dimensões. Nesse caso, ainda estamos usando como alvo a anotação sobre o paciente com a existência da mVI.
+
+Novamente nos deparamos com um obstáculo. Classificar frames individuais considerando uma anotação para um voxel adiciona muito ruído ao processo de inferência, visto que imagens, muitas vezes, sem qualquer informação que descreve o fígado, a lesão e em última instância a micro invasão, estão categorizadas, nessa abordagem, como positivo. Aumentando assim a taxa de falso positivo.
+
+Finalmente resolvemos anotar manualmente quais eram os frames em cada uma das fases que continham uma lesão hepática. Com isso aumentamos as chances da rede dar atenção a regiões que verdadeiramente podem trazer informações que ressaltam traços da existência as mVIs.
+
+Para cada uma das topologias propostas, experimentamos diversos hiper parâmetros, desde regularização, taxa de dropout para evitar overffiting, normalização de batch, otimizadores, inicializadores e quantidade de camadas internas, dentre outros.
+
+As redes tridimensionais contêm muitos parâmetros, por isso, o computo da arquitetura é naturalmente demorada. Além disso, devido a essa alta quantidade de parâmetros, existe uma alta probabilidade de overffiting.
+
+
 
 ## Ferramentas
 
