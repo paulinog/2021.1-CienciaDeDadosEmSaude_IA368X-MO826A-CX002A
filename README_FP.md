@@ -359,14 +359,19 @@ Olhar apenas para a lesão mais cerca de 1 centímetro dela não proporciona mel
 
 
 # Conclusão
-> Destacar as principais conclusões obtidas no desenvolvimento do projeto.
->
-> Destacar os principais desafios enfrentados.
->
-> Principais lições aprendidas.
+
+Desenvolvemos e exploramos métodos para identificação de invasão microvascular em lesões no fígado. Verificamos que esse não é um problema fácil de se resolver, visto que existem diversas limitações que podem prejudicar o processo de tomada de decisão.
+
+Em suma, não é possível identificar invasões olhando apenas para a região da lesão, como já havia sido documentado na literatura, a periferia do carcinoma é peça fundamental para a detecção.
+
+As redes neurais convolucionais 3D, apesar de serem ferramentas poderosas, elas exitem um auto poder computacional para que o modelo se adéque aos dados e possa com precisão e sensibilidade classificar os voxels.
+
+As redes 2D são uma alternativa para superar tal impasse, no entanto, isso exigirá um esforço coletivo junto a especialistas da área para identificar os slices que descrevem uma lesão, - processo esse que pode ser automatizado, com outro classificador, mas de lesões.
+
 
 # Trabalhos Futuros
-> O que poderia ser melhorado se houvesse mais tempo?
+
+Em trabalhos futuros, iremos explorar meios para refinar o processo de tomada de decisão, usando técnicas de explicabilidade e segmentação automatica por saliência.
 
 # Referências Bibliográficas
 
