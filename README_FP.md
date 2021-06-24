@@ -16,11 +16,20 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Descrição Resumida do Projeto
-> Descreva resumidamente o tema do projeto. O resumo idealmente deve: apresentar o contexto gerador e motivação; indicar o problema; apresentar a sua solução para o problema; indicar porque a sua solução é melhor do que os esforços atuais (não obrigatório); concluir com os resultados alcançados.
 
 O carcinoma hepatocelular (CHC) é o tumor primário hepático mais comum e a principal causa de morte em pacientes cirróticos (1). O diagnóstico definitivo do CHC pode ser estabelecido apenas através de estudos de imagem, reservando-se a análise histopatológica somente para lesões indeterminadas, prática que tem sido adotada por diretrizes em todo o mundo desde 2012 (1-7). 
-A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático (8). Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho (8). A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência (9, 10) e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão (11-13). Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível (14).  
-No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios (14-16). Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos à ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
+
+A ressecção cirúrgica e o transplante hepático são importantes tratamentos curativos disponíveis para o CHC, mas a taxa de recorrência para ambos permanece elevada. A taxa de recorrência em cinco anos do CHC é de aproximadamente 70% nos casos de ressecção hepática e 25% nos casos de transplante hepático (8). Um dos fatores mais importantes que explica a recorrência é a invasão microvascular (IMV), definida pela invasão de células tumorais em um espaço vascular revestido por endotélio, incluindo vasos microscópicos da veia porta, artéria hepática e vasos linfáticos, não sendo detectada na avaliação médica radiológica na rotina de trabalho (8). 
+
+A IMV foi descrita como o mais forte preditor independente de sobrevida livre de recorrência (9, 10) e de mau prognóstico após ressecção hepática parcial ou transplante hepático em pacientes com CHC dentro dos critérios de Milão (11-13). Assim, predizer IMV no pré-operatório poderia permitir uma seleção mais adequada de pacientes para cada terapêutica. Além disso, se a ressecção hepática for considerada para pacientes com alto risco de invasão microvascular, por exemplo, um procedimento com ampla margem de ressecção pode ser preferível (14). 
+
+No entanto, a IMV atualmente só é diagnosticada na rotina após ressecção cirúrgica ou transplante hepático, através da avaliação histopatológica. No conhecimento atual, é desafiador diagnosticar IMV através de exames pré-operatórios (14-16). Deste modo, há uma necessidade de um meio quantitativo de previsão de IMV no pré-operatório, preferencialmente através de uma modalidade de diagnóstico por imagem que seja realizada rotineiramente nos pacientes que serão submetidos à ressecção ou transplante hepático, como a Tomografia Computadorizada (TC) contrastada trifásica. Neste contexto, surge a radiômica. 
+
+A radiômica consiste em um campo emergente na análise de imagens que através da extração de grande quantidade de características de dados de imagens médicas, habitualmente não observadas ao olho humano nú- pode vir a refletir o tecido biológico subjacente (17).  Busca-se então, identificar e validar novos parâmetros pré-operatórios que funcionem como “biomarcadores radiológicos”, indicando a agressividade do CHC como preditor prognóstico pré-operatório através da IMV. 
+
+Verificamos que as redes convolucionais de 2 e 3 dimensões podem ser aplicados como método competitivo para identificação de tais invasões. Mostramos uma análise inicial onde pudemos notar alguns desafios que ainda precisam ser superados pela comunidade científica. Porém, os achados sugerem que usando redes profundas e dados volumétricos, existem prospecções para o desenvolvimento de um processo de identificação automatizado.
+
+
 
 # Vídeos do Projeto
 
@@ -61,7 +70,7 @@ Apesar de todos esses métodos apresentarem resultados competitivos, todos são 
 
 # Perguntas de Pesquisa
 
-> É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
+É possível predizer IMV do CHC no pré-operatório utilizando-se dados clínico-laboratoriais e de tomografia computadorizada (TC) trifásica? 
 
 # Objetivos do Projeto
 
@@ -75,14 +84,23 @@ Para lidar com o desafio da identificação da presença de mVI, consideramos du
 
 Trabalhos anteriores mostraram que através da análise de regiões específicas e atributos radiômicos das imagens, resultados promissões são alcançados para resolução desta tarefa. Contudo, existe um alto grau de complexidade associado ao processo de identificação de áreas de interesse que descrevem uma lesão. Essas regiões são usadas como ponto de referência para a busca das mVI na lesão e regiões periféricas a ela. Além disso, em alguns trabalhos, os autores utilizaram técnicas laboriosas de engenharia de características. Nessa sentido, buscamos explorar meios mais robustos, capazes de extrair informações discriminativas dos dados, com um menor esforço associado a triagem inicial por especialistas da área.
 
+Para isso propusemos o uso de redes neurais convolucionais de 2 e 3 dimensões. Essas redes recebem em paralelo três entrada, que correspondem a três fases do exame, a saber, fase arterial, portal e equilíbrio. 
+
+Para cada uma dessas entradas aplicamos dois filtros de convolução. A ideia essa estrutura aqui é salientar características de alta ordem que descrevem as classes do problema. Para toda camada de convolução adicionamos um mecanismo de pooling para, de modo a reduzir a quantidade de parâmetros, além de manter apenas as características mais discriminativas.
+
+Em seguida, a rede transforma os volumes resultantes em sinais unidimensionais para serem concatenados. A racionalidade por trás dessa abordagem é proporcionar que a rede consiga olhar simultaneamente para todas as fases e encontra pontos de similaridade entre as entradas, e intuitivamente, contribuir para aumentar a sensibilidade do arcabouço.
+
+Por fim, o vetor gerado é passado por três camadas totalmente conectadas até chegar a camada de decisão final. Intercalamos nessas camadas operações de dropout 30% para evitar a especialização dos dados durante o treinamento.
+
+Esse consórcio de convoluções foi construído baseado na visão dos especialistas que afirmam que a micro invasão pode ser melhor encontra quando todas as fases são consideradas no processo de tomada de decisão. Vale lembrar que para o ser humano, não é possível identificar uma micro invasão olhando para dados de ressonância.
+
+A imagem abaixo mostra a arquitetura desenvolvimento para o estudo desse projeto.
 
 
 <p float="left">
   <img src="/assets/net_topology.png" width="500" />
 </p>
 
-> Abordagem adotada pelo projeto na busca pela resposta às perguntas de pesquisa.
-> Justificar teoricamente, sempre que possível, a metodologia adotada.
 
 ## Bases de Dados e Evolução
 
